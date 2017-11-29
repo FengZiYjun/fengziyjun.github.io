@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>The Dragon Warrior</title>
+  <title>Python Advanced | The Dragon Warrior</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -128,19 +128,13 @@
                             <li><a href="/" class="animsition-link">The Dragon Warrior</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            <li><a href="https://github.com/FengZiYjun" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
-                            
-                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
                             
                             
                             <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
                             
                             
-                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
-                            
-                            
-                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
                             
                             <li class="nolink"><span>Welcome!</span></li>
                         </ul>
@@ -173,21 +167,20 @@
       </time>
     
 </span>
-                <h1></h1>
+                <h1>Python Advanced</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="Python-Advanced"><a href="#Python-Advanced" class="headerlink" title="Python Advanced"></a>Python Advanced</h1><p>标签（空格分隔）： programming_language</p>
-<hr>
+      		<h1 id="Python-Advanced"><a href="#Python-Advanced" class="headerlink" title="Python Advanced"></a>Python Advanced</h1><hr>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="元组类型可变长参数"><a href="#元组类型可变长参数" class="headerlink" title="元组类型可变长参数"></a>元组类型可变长参数</h3><p>在参数名前加<em><br>`def f(</em>list): pass<code>`f(1,2,3,4,5)</code></p>
 <h3 id="字典类型可变长参数"><a href="#字典类型可变长参数" class="headerlink" title="字典类型可变长参数"></a>字典类型可变长参数</h3><p>在参数名前加<strong><br>`def f(</strong>dict): pass<code>`f(x=1,y=2,z=3)</code></p>
 <h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><p>高阶函数，是参数为函数对象的函数<br>函数名的赋值就是函数对象赋值<br><code>def f(x): pass</code><br><code>g = f</code><br><code>def F(f,x): f(x)</code> 形参f的类型是函数对象<br><code>F(g,10)</code></p>
-<h3 id="函数变量作用域"><a href="#函数变量作用域" class="headerlink" title="函数变量作用域"></a>函数变量作用域</h3><p>Local &gt; Enclosing &gt; Global &gt; Build-in<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = 0           # global</span><br><span class="line">def outer():</span><br><span class="line">    x = 1       # enclosing</span><br><span class="line">    def inner():</span><br><span class="line">        x = 2   # local</span><br><span class="line">    inner()</span><br><span class="line">    </span><br><span class="line">outer()</span><br></pre></td></tr></table></figure></p>
+<h3 id="函数变量作用域"><a href="#函数变量作用域" class="headerlink" title="函数变量作用域"></a>函数变量作用域</h3><p>Local &gt; Enclosing &gt; Global &gt; Build-in<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span>           <span class="comment"># global</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">()</span></span><span class="symbol">:</span></span><br><span class="line">    x = <span class="number">1</span>       <span class="comment"># enclosing</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span></span><span class="symbol">:</span></span><br><span class="line">        x = <span class="number">2</span>   <span class="comment"># local</span></span><br><span class="line">    inner()</span><br><span class="line">    </span><br><span class="line">outer()</span><br></pre></td></tr></table></figure></p>
 <p>在函数内部修改global变量时，使用<code>global</code>关键字声明对外部变量的改写操作</p>
 <h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>适用于只用一次的函数，不许考虑命名<br><code>函数对象 = lambda 形参列表：表达式</code><br>例如：(通过测试)<br><code>(lambda x,y,z: x if x&gt;y and x&gt;y else (y if y&gt;z else z))(3,4,5)</code></p>
-<h3 id="生成器-generator"><a href="#生成器-generator" class="headerlink" title="生成器 generator"></a>生成器 generator</h3><p>生成器是带有无限循环的<code>yield</code>的函数<br>按照需求依次生成数据项，需要的时候才生成，节约空间<br>用<code>yield</code>生成，用<code>__next__()</code>获取<br>每次调用<code>__next__()</code>时，从上一次的<code>yield</code>语句处继续执行，直到遇到下一个<code>yield</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def generator_LGD(a):</span><br><span class="line">    i = a</span><br><span class="line">    while True:</span><br><span class="line">        yield i + a</span><br><span class="line">g = generator_LGD(3)</span><br><span class="line">g.__next__()</span><br><span class="line">g.__next__()</span><br></pre></td></tr></table></figure></p>
-<h3 id="装饰器-decorator"><a href="#装饰器-decorator" class="headerlink" title="装饰器 decorator"></a>装饰器 decorator</h3><p>包装函数的函数，在不必改动原有函数的基础上增加功能<br>对功能没影响、方便阅读的语法叫<em>语法糖</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def myDecorator(function_obj): # 接受函数对象为参数</span><br><span class="line">    def wrapper(*plist):    # inner接受该函数对象的参数为参数</span><br><span class="line">        ...         # 在该函数和它的参数上做包装</span><br><span class="line">        return sth  # 返回经过包装后的东西</span><br><span class="line">    return wrapper      # 返回新构建的函数</span><br><span class="line"></span><br><span class="line">@myDecorator  # 等价于f = myDecorator(f)</span><br><span class="line">def f(*list):</span><br><span class="line">    reutrn len(list)</span><br><span class="line">    </span><br><span class="line">f(1,2,3,4)</span><br></pre></td></tr></table></figure></p>
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>一个函数把内部定义的函数作为返回值，那么这个内部定义的函数成为闭包；对enclosing作用域进行引用的内部函数也叫闭包。<br>闭包将函数语句和执行环境打包在一起<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def outer(x):</span><br><span class="line">    def inner(y):</span><br><span class="line">        return x + y</span><br><span class="line">    return inner</span><br><span class="line">f = outer(1)</span><br><span class="line">f(2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="生成器-generator"><a href="#生成器-generator" class="headerlink" title="生成器 generator"></a>生成器 generator</h3><p>生成器是带有无限循环的<code>yield</code>的函数<br>按照需求依次生成数据项，需要的时候才生成，节约空间<br>用<code>yield</code>生成，用<code>__next__()</code>获取<br>每次调用<code>__next__()</code>时，从上一次的<code>yield</code>语句处继续执行，直到遇到下一个<code>yield</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator_LGD</span><span class="params">(a)</span>:</span></span><br><span class="line">    i = a</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> i + a</span><br><span class="line">g = generator_LGD(<span class="number">3</span>)</span><br><span class="line">g.__next__()</span><br><span class="line">g.__next__()</span><br></pre></td></tr></table></figure></p>
+<h3 id="装饰器-decorator"><a href="#装饰器-decorator" class="headerlink" title="装饰器 decorator"></a>装饰器 decorator</h3><p>包装函数的函数，在不必改动原有函数的基础上增加功能<br>对功能没影响、方便阅读的语法叫<em>语法糖</em><br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myDecorator</span><span class="params">(function_obj)</span></span>: <span class="comment"># 接受函数对象为参数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*plist)</span></span>:    <span class="comment"># inner接受该函数对象的参数为参数</span></span><br><span class="line">        ...         <span class="comment"># 在该函数和它的参数上做包装</span></span><br><span class="line">        <span class="keyword">return</span> sth  <span class="comment"># 返回经过包装后的东西</span></span><br><span class="line">    <span class="keyword">return</span> wrapper      <span class="comment"># 返回新构建的函数</span></span><br><span class="line"></span><br><span class="line">@myDecorator  <span class="comment"># 等价于f = myDecorator(f)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(*list)</span></span><span class="symbol">:</span></span><br><span class="line">    reutrn len(list)</span><br><span class="line">    </span><br><span class="line">f(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>一个函数把内部定义的函数作为返回值，那么这个内部定义的函数成为闭包；对enclosing作用域进行引用的内部函数也叫闭包。<br>闭包将函数语句和执行环境打包在一起<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">(x)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(y)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">return</span> x + y</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line">f = outer(<span class="number">1</span>)</span><br><span class="line">f(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
 <p><code>outer</code>接受的参数是一种“执行环境”，经过一次初始化之后就不会改变<br><code>inner</code>接受的参数是普通变量，可以与特定“执行环境”进行交互<br>装饰器就是闭包最好的例子</p>
 <p>##面向对象</p>
 <p>###　类与对象<br>用<code>class</code>声明一个类，括号内是继承的对象<br><code>class subclass(class):</code></p>
@@ -220,12 +213,12 @@
         <nav class="pagination" role="pagination">
     
     <a class="pull-left" href="/2017/11/28/概率论笔记/" style="float: left;">
-        ← 
+        ← 概率论笔记
     </a>
     
     
     <a class="pull-right" href="/2017/11/28/Regular Expression/">
-         →
+        Regular Expression →
     </a>
     
 </nav>
@@ -252,19 +245,13 @@
             <div class="social">
                 <ul>
                     
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    <li><a href="https://github.com/FengZiYjun" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
                     
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
                     
                     
                     <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
                     
                     
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
                     
                 </ul>
             </div>
