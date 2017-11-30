@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Machine learning algorithm and practice(Basic) | The Dragon Warrior</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="The Dragon Warrior">
+    <meta name="author" content="ZIYUAN FENG">
+    <meta name="description" content="fzy's blog" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="The Dragon Warrior" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link"></a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="https://github.com/FengZiYjun" class="animsition-link">Github</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/FA_logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">The Dragon Warrior</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/FengZiYjun" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-11-30T01:55:08.970Z" itemprop="datePublished">
+          2017-11-30
+      </time>
+    
+</span>
+                <h1>Machine learning algorithm and practice(Basic)</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="ML-algorithm-and-practice-Basic"><a href="#ML-algorithm-and-practice-Basic" class="headerlink" title="ML algorithm and practice(Basic)"></a>ML algorithm and practice(Basic)</h1><hr>
+<h2 id="1-矢量编程基础"><a href="#1-矢量编程基础" class="headerlink" title="1.  矢量编程基础"></a>1.  矢量编程基础</h2><h3 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h3><ul>
+<li><p>对象是矩阵的一行，特征是矩阵的一列<br>例如：</p>
+</li>
+<li><p>词袋列表：若干文本提取出不同的词组成的集合<br>词向量空间：文本-词袋构成的整数值矩阵</p>
+</li>
+<li>分类/聚类 看作是根据对象特征的相似性和差异性，对矩阵空间的划分</li>
+<li>预测/回归 看作是根据对象在某种序列（时间）上的相关性，表现特征取值变化的趋势</li>
+</ul>
+<p>三个方向的用途：<br>解线性方程：通过计算距离<br>方程降次：二次型 升维<br>变换：维度约简</p>
+<h3 id="矢量化编程"><a href="#矢量化编程" class="headerlink" title="矢量化编程"></a>矢量化编程</h3><p>基于矩阵的基本运算<br>MATLAB 和python的矩阵运算调用C函数完成  数值运算  并行运算<br>图形处理器GPU (graphic computing unit)</p>
+<h3 id="numpy-矩阵运算"><a href="#numpy-矩阵运算" class="headerlink" title="numpy 矩阵运算"></a>numpy 矩阵运算</h3><p>初始化<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># initialize a <span class="number">3</span>*<span class="number">4</span> matrix</span><br><span class="line">import numpy as np</span><br><span class="line">allZero = np.zeros([<span class="number">3</span>,<span class="number">4</span>])  # 全零矩阵</span><br><span class="line">allOne = np.ones([<span class="number">3</span>,<span class="number">4</span>])   # 全一矩阵</span><br><span class="line">myrandom = np.random.rand(<span class="number">3</span>,<span class="number">4</span>)   # 随机矩阵</span><br><span class="line">myeye = np.eye(<span class="number">3</span>) # <span class="number">3</span>*<span class="number">3</span> 单位矩阵</span><br><span class="line"># 用二维向量初始化矩阵</span><br><span class="line">myMatrix = mat([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">2</span>,<span class="number">4</span>],[<span class="number">4</span>,<span class="number">8</span>]])</span><br></pre></td></tr></table></figure></p>
+<p>元素运算<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">print</span> matrixA + matrixB</span><br><span class="line"><span class="builtin-name">print</span> matrixA - matrixB</span><br><span class="line"><span class="builtin-name">print</span> c * matrixA</span><br><span class="line"><span class="comment"># the sum of all elements</span></span><br><span class="line">sum(myMatrix)</span><br><span class="line"></span><br><span class="line"><span class="comment"># multiply elements at the same positions</span></span><br><span class="line"><span class="comment"># a certain broadcast rule will be applied to expand the matrix if dimension is not match.</span></span><br><span class="line">multiply(matrixA,matrixB)</span><br><span class="line"></span><br><span class="line"><span class="comment"># the power of each element</span></span><br><span class="line">power(matrix,2)</span><br></pre></td></tr></table></figure></p>
+<p>矩阵相乘<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">matrixa * matrixB</span><br><span class="line"># multiply <span class="keyword">of</span> two matrixs <span class="keyword">use</span> operator *, <span class="keyword">of</span> matrix elements <span class="keyword">use</span> multiply()</span><br></pre></td></tr></table></figure></p>
+<p>矩阵转置<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">matrix</span>.T</span><br><span class="line"><span class="built_in">matrix</span>.<span class="built_in">transpose</span>()</span><br></pre></td></tr></table></figure></p>
+<p>其他操作:行列切片/拷贝/比较<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># show the line and column number</span></span><br><span class="line">[m,n] = shape(matrix)</span><br><span class="line"></span><br><span class="line"><span class="comment"># slice by line </span></span><br><span class="line">line = matrix[0]</span><br><span class="line"></span><br><span class="line"><span class="comment"># slice by column</span></span><br><span class="line">col = matrix.T[0]</span><br><span class="line"></span><br><span class="line"><span class="comment"># copy method</span></span><br><span class="line">copied = matrix.copy()</span><br><span class="line"></span><br><span class="line"><span class="comment"># compare each pair of elements at the same position</span></span><br><span class="line"><span class="comment"># return a bool matrix</span></span><br><span class="line">matrixA &gt; matrixB</span><br></pre></td></tr></table></figure></p>
+<h3 id="numpy的Linalg库提供线性代数运算"><a href="#numpy的Linalg库提供线性代数运算" class="headerlink" title="numpy的Linalg库提供线性代数运算"></a>numpy的Linalg库提供线性代数运算</h3><p>1 行列式<br><code>linalg.det(matrix)</code><br>2 逆矩阵<br><code>linalg.inv(matrix)</code><br>3 秩<br><code>linalg.matrix_rank(matrixA)</code><br>4 解线性方程组<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># solve A*s = B </span></span><br><span class="line"><span class="attr">s</span> = linalg.solve(A,B)</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-数学基础"><a href="#2-数学基础" class="headerlink" title="2. 数学基础"></a>2. 数学基础</h2><p>现代数学三大根基：概率论（事物可能会在怎样）、数值分析（怎样变化）、线性代数（不同观察维度）</p>
+<p>###2.1 相似性的度量 similarity measurement（向量的距离）</p>
+<ul>
+<li><p><strong>Euclidean范数</strong><br>各元素平方和的开方<br>$$X = \sqrt{\sum_{i=1}^nx_i^2}$$<br><code>linalg.norm(matrixA)</code></p>
+</li>
+<li><p><strong>Minkowski Distance</strong><br>$$d=\sqrt[p]{\sum_{i=1}^n |a_i-b_i|^p}$$<br>when p = 1, d is <strong>Manhattan Distance</strong> (city block distance)<br><code>sum(abs(vectorA-vectorB))</code></p>
+</li>
+</ul>
+<p>when p = 2, d is <strong>Euclidean Distance</strong><br><code>sqrt( (vectorA-vectorB)*((vectorA-vectorB).T) )</code></p>
+<p>when p -&gt; infinite, d is <strong>Chebyshev Distance</strong><br>the same as $$d=max_{i=1}^n(|a_i-b_i|)$$<br><code>abs(vectorA-vectorB).max()</code></p>
+<ul>
+<li><p><strong>Consine</strong><br>describe the difference of direction of two vectors<br><code>cosV12 = dot(vectorA,vectorB)/(linalg.norm(vectorA)*linalg.norm(vectorB))</code></p>
+</li>
+<li><p><strong>Hamming Distance</strong><br>between two strings: the minimum times of replacement to transform one into the other</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tmp = nonzero(vectorA-vecotrB)</span><br><span class="line">tmp2 = shape(tmp) <span class="comment"># return [line,column]</span></span><br><span class="line">tmp2[1]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Jaccard similarity coefficient</strong><br>$$J(A,B)={|A\cap B|\over|A\cup B|}$$</p>
+</li>
+<li><strong>Jaccard Distance</strong><br>$$J_d = 1 - J(A,B)$$ <figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> scipy.spacial.distance <span class="keyword">as</span> dist</span><br><span class="line">matV = mat(vectorA,vectorB)</span><br><span class="line">dist.pdist(matV,<span class="string">'jaccard'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-2概率论"><a href="#2-2概率论" class="headerlink" title="2.2概率论"></a>2.2概率论</h3><ul>
+<li><p>样本：矩阵对象<br>样本空间：全体对象<br>随机事件：某个对象具有某属性<br>随机变量：某个属性</p>
+</li>
+<li><p>讨论某个对象属于某个类别的可能性</p>
+</li>
+</ul>
+<p><strong>贝叶斯公式</strong><br>$$P(B|A)P(A) = P(A|B)P(B)$$</p>
+<ul>
+<li><p>多元统计： 联合概率分布 与 边缘概率分布</p>
+</li>
+<li><p>特征相关性<br><strong>expectation 期望</strong>$$E[X]=\sum_{i=1}^np_ix<em>i$$<br><strong>variance 方差</strong>$$D=E[(X-E[X])^2]=\sum</em>{i=1}^np_i(x_i-E)^2$$<br><strong>covariance 协方差</strong>$$cov(X,Y)=E[(X-E[X])(Y-E[Y])]$$<br>用于衡量两个变量的总体误差。而方差是协方差的一种特殊情况，即当两个变量是相同的情况</p>
+</li>
+</ul>
+<p><strong>covariance matrix 协方差矩阵</strong>$$cov(X,Y)=E[(X-E[X])(Y-E[Y])^T]$$</p>
+<p><strong>correlation coefficient 相关系数</strong><br>$$CC_{xy}={Cov(X,Y) \over \sqrt{D(X)} \sqrt{D(Y)}}$$<br>取值范围[-1,1] -1线性负相关  1线性正相关</p>
+<p><strong>corelation distance 相关距离</strong><br>$$D<em>{XY}=1-CC</em>{XY}$$</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 均值</span></span><br><span class="line">m1 = mean(vectorA)</span><br><span class="line"><span class="comment"># 标准差 = 方差的平方根</span></span><br><span class="line">dv1 = std(vectorA)</span><br><span class="line"><span class="comment"># 相关系数</span></span><br><span class="line">corref = mean(multiply(vectorA-m1,vectorB-m2))/(dv1*dv2)</span><br><span class="line"><span class="comment"># 相关系数矩阵</span></span><br><span class="line">print corrcoef(mat(vectorA,vectorB))</span><br></pre></td></tr></table></figure>
+<p><strong>Mahalanobis Distance马氏距离</strong><br>排除量纲对相关性的干扰<br>$$有M个样本向量X_1,X_2,…X_m,协方差矩阵为S,均值为E$$<br>$$M(X) = \sqrt{(X-E)^TS^{-1}(X-E)}$$<br>$$M(X_i,X_j) = \sqrt{(X_i-X_j)^TS^{-1}(X_i-X_j)}$$<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">matrix</span> = mat(vectorA,vectorB)</span><br><span class="line"><span class="attr">covinv</span> = linalg.inv(cov(matrix))</span><br><span class="line"><span class="attr">tp</span> = vectorA-vectorB</span><br><span class="line"><span class="attr">mditance</span> = sqrt(dot(dot(tp,covinv),tp.T))</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-3-线性空间变换"><a href="#2-3-线性空间变换" class="headerlink" title="2.3 线性空间变换"></a>2.3 线性空间变换</h3><p>向量乘矩阵：向量从一个线性空间变换到另一个线性空间的过程<br>矩阵乘矩阵：向量组的空间变换，维度对齐<br>一组特征向量：变换过程只发生伸缩、不发生旋转<br>特征值：伸缩的比例<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 特征值 特征向量</span></span><br><span class="line">eval,evec = linalg.<span class="built_in">eig</span>(<span class="keyword">matrix</span>)</span><br><span class="line"><span class="meta"># 还原</span></span><br><span class="line"><span class="keyword">matrix</span> = evec*(eval*<span class="built_in">eye</span>(m))*linalg.<span class="built_in">inv</span>(evec)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-4-数据归一化"><a href="#2-4-数据归一化" class="headerlink" title="2.4 数据归一化"></a>2.4 数据归一化</h3><p>变成（0,1）之间的小数，或者有量纲变成无量纲</p>
+<ul>
+<li>标准化欧式距离：各个分量都标准化到均值方差相等</li>
+<li>以方差的倒数为权重，<strong>加权欧氏距离</strong><br>$$d = \sqrt{\sum<em>{k=1}^n({X</em>{1k}-X_{2k} \over S_k})^2}$$</li>
+</ul>
+<h3 id="2-5数据处理与可视化"><a href="#2-5数据处理与可视化" class="headerlink" title="2.5数据处理与可视化"></a>2.5数据处理与可视化</h3><ul>
+<li><p>读取<br>从文件读取数据形成矩阵</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def fileToMatrix(path,delimiter): # <span class="string">'path'</span> <span class="keyword">is</span> the path of <span class="keyword">a</span> <span class="keyword">file</span></span><br><span class="line">    <span class="keyword">list</span> = []</span><br><span class="line">    fp = <span class="keyword">open</span>(path,<span class="string">"rb"</span>)</span><br><span class="line">    content = fp.<span class="keyword">read</span>()</span><br><span class="line">    fp.<span class="keyword">close</span>()</span><br><span class="line">    rowlist = content.splitlines()</span><br><span class="line">    recordlist = [row.<span class="keyword">split</span>(decimiter) <span class="keyword">for</span> r in rowlist <span class="keyword">if</span> r.strip()]</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">mat</span>(recordlist)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可视化</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> plt</span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">ax.scatter(X,Y,c=<span class="string">'red'</span>,marker=<span class="string">'o'</span>) # draw dots</span><br><span class="line">ax.plot(X,y,<span class="string">'r'</span>) # draw curve</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="http://matplotlib.org/examples/index.html" target="_blank" rel="noopener">http://matplotlib.org/examples/index.html</a></p>
+<h2 id="3-中文文本分类"><a href="#3-中文文本分类" class="headerlink" title="3. 中文文本分类"></a>3. 中文文本分类</h2><p>总体步骤：<br>预处理–中文分词–构建词向量空间–权重策略–使用分类器–评价结果</p>
+<h3 id="3-1-预处理"><a href="#3-1-预处理" class="headerlink" title="3.1 预处理"></a>3.1 预处理</h3><ul>
+<li>选范围</li>
+<li>建立语料库： 训练集  测试集</li>
+<li>文本格式转换： 转为TXT或者XML<br>过滤标签  小心原本就有的乱码<br>python去除HTML标签使用lxml库，使用海量网络文本转换</li>
+<li>检测句子边界：<br>英文句号容易跟缩写混淆，可以使用简单的启发式规则和统计分类技术<br>（图片式标点必须被字符型替代）</li>
+</ul>
+<h3 id="3-2-中文分词-Chinese-Word-Segmentation"><a href="#3-2-中文分词-Chinese-Word-Segmentation" class="headerlink" title="3.2 中文分词 Chinese Word Segmentation"></a>3.2 中文分词 Chinese Word Segmentation</h3><p>词没有形式上的分界符<br>NLP的核心问题?</p>
+<p>中文分词算法： 基于概率图模型的条件随机场(CRF)——Lafferty</p>
+<p>文本结构化模型： 词向量空间模型、主题模型、依存句法的树表示、RDF的图表示</p>
+<p>jieba分词系统 使用CRF算法和python<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回可迭代的generator</span></span><br><span class="line"><span class="comment"># 默认切分</span></span><br><span class="line">seg_list = jieba.cut(<span class="string">"中文文本串"</span>,<span class="attribute">cut_all</span>=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># 全切分</span></span><br><span class="line">seg_list = jieba.cut(<span class="string">"中文文本串"</span>,<span class="attribute">cut_all</span>=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># 搜索引擎粒度切分</span></span><br><span class="line">seg_list = jieba.cut_for_search(<span class="string">"中文文本串"</span>)</span><br><span class="line"></span><br><span class="line"><span class="builtin-name">print</span> <span class="string">"/"</span>.join(seg_list)</span><br><span class="line">list(seg_list)</span><br></pre></td></tr></table></figure></p>
+<p>more use: <a href="https://www.oschina.net/p/jieba" target="_blank" rel="noopener">https://www.oschina.net/p/jieba</a></p>
+<ul>
+<li><p>语料库分词<br>无法排除全角空格出现在文件中导致无法read()的问题<br>因为str没有了decode()方法<br>这里采用无视全角空格的文件的方法</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import sys </span><br><span class="line">import <span class="built_in">os</span></span><br><span class="line">import jieba</span><br><span class="line">import codecs</span><br><span class="line"> #reload(sys) 被淘汰的用法</span><br><span class="line"> #sys.setdefaultencoding(<span class="string">'unicode'</span>)</span><br><span class="line"></span><br><span class="line">def savefile(<span class="built_in">path</span>,content):</span><br><span class="line">    fp = <span class="built_in">open</span>(<span class="built_in">path</span>,<span class="string">"w"</span>)</span><br><span class="line">    fp.<span class="built_in">write</span>(content)</span><br><span class="line">    fp.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">def readfile(<span class="built_in">path</span>):</span><br><span class="line">    fp = <span class="built_in">open</span>(<span class="built_in">path</span>,<span class="string">"r"</span>)</span><br><span class="line">    try:</span><br><span class="line">        content = fp.<span class="built_in">read</span>()</span><br><span class="line">    except:</span><br><span class="line">        content = <span class="string">""</span></span><br><span class="line">    fp.<span class="built_in">close</span>()</span><br><span class="line">    <span class="keyword">return</span> content</span><br><span class="line"></span><br><span class="line">corpus_path = <span class="string">"D:/Data Science Experiment/Chinese Text Clustering/train_corpus/"</span></span><br><span class="line">seg_path = <span class="string">"D:/Data Science Experiment/Chinese Text Clustering/corpus_segments/"</span></span><br><span class="line"></span><br><span class="line"># get all the files under this <span class="built_in">path</span></span><br><span class="line">catelist = <span class="built_in">os</span>.listdir(corpus_path)</span><br><span class="line"><span class="built_in">print</span>(catelist)</span><br><span class="line"><span class="keyword">for</span> mydir <span class="keyword">in</span> catelist:</span><br><span class="line">    </span><br><span class="line">    class_path = corpus_path + mydir + <span class="string">"/"</span></span><br><span class="line">    seg_dir = seg_path + mydir + <span class="string">"/"</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">os</span>.<span class="built_in">path</span>.exists(seg_dir):</span><br><span class="line">        <span class="built_in">os</span>.makedirs(seg_dir)</span><br><span class="line">    file_list = <span class="built_in">os</span>.listdir(class_path)</span><br><span class="line">    <span class="built_in">print</span>(file_list)</span><br><span class="line">    <span class="keyword">for</span> file_path <span class="keyword">in</span> file_list:</span><br><span class="line">        <span class="built_in">print</span>(file_path)</span><br><span class="line">        # make up the <span class="built_in">path</span> of target txt</span><br><span class="line">        fullname = class_path+file_path</span><br><span class="line">        content = readfile(fullname).strip()</span><br><span class="line">        content = content.replace(<span class="string">"\r\n"</span>,<span class="string">""</span>).strip()</span><br><span class="line">        content_seg = jieba.cut(content)</span><br><span class="line">        savefile(seg_dir + file_path, <span class="string">"/"</span>.join(content_seg))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>转化为Bunch类储存<br>os, pickle, bunch 的使用</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">import pickle</span><br><span class="line">from sklearn<span class="selector-class">.datasets</span><span class="selector-class">.base</span> import Bunch</span><br><span class="line"></span><br><span class="line">bunch = Bunch(target_name = [],label=[],filename=[],contents=[])</span><br><span class="line"></span><br><span class="line">seg_path = <span class="string">"D:/Data Science Experiment/Chinese Text Clustering/corpus_segments/"</span></span><br><span class="line">bunch_path = <span class="string">"D:/Data Science Experiment/Chinese Text Clustering/words_bag.dat"</span></span><br><span class="line"></span><br><span class="line">catelist = os.listdir(seg_path)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(catelist)</span></span></span><br><span class="line"><span class="keyword">for</span> mydir <span class="keyword">in</span> catelist:</span><br><span class="line">  class_path = seg_path + mydir + <span class="string">"/"</span></span><br><span class="line">  file_list = os.listdir(class_path)</span><br><span class="line">  <span class="keyword">for</span> file_path <span class="keyword">in</span> file_list:</span><br><span class="line">    fullname = class_path + file_path</span><br><span class="line">    bunch<span class="selector-class">.label</span><span class="selector-class">.append</span>(mydir)</span><br><span class="line">    bunch<span class="selector-class">.filename</span><span class="selector-class">.append</span>(fullname)</span><br><span class="line">    fileObj = open(fullname)</span><br><span class="line">    bunch<span class="selector-class">.contents</span><span class="selector-class">.append</span>(fileObj.read().strip())</span><br><span class="line">    fileObj.close()</span><br><span class="line"></span><br><span class="line">file_obj = open(bunch_path,<span class="string">"wb"</span>)</span><br><span class="line">pickle.dump(bunch,file_obj)</span><br><span class="line">file_obj.close()</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"finished!"</span>)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Scikit-learn<br><a href="http://scikit-learn.org/stable/" target="_blank" rel="noopener">http://scikit-learn.org/stable/</a><br>分类与回归算法、聚类算法、维度约简、模型选择、数据预处理<br>有教程，多看</p>
+</li>
+<li><p>向量空间模型<br>把文本储存为向量 缺点是维度会很高<br>过滤一些<strong>停用词</strong><br>下载停用词表</p>
+</li>
+</ul>
+<h3 id="3-3-权重策略：-TF-IDF方法"><a href="#3-3-权重策略：-TF-IDF方法" class="headerlink" title="3.3 权重策略： TF-IDF方法"></a>3.3 权重策略： TF-IDF方法</h3><p><strong>词频Term Frequency</strong><br>是指某个给定词语在某文件中的出现频率。（考虑重复计数）<br>$$TF_w = {w在文件的出现次数 \over 文件词语出现总数}$$<br><strong>逆向文件频率IDF</strong><br>代表一个词语的普遍重要程度<br>$$IDF_w = log{文件总数 \over 1 + 包含词语某个w的文件数}$$<br><strong>TF_IDF</strong></p>
+<p>$$TF_w*IDF_w$$<br>可以衡量某个词语w的重要性<br>某一“重要”的词语在某一文件内高频、在全部文件中低频，则可以用来分类，TF-TDF权重就高。</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.datasets.base <span class="keyword">import</span> Bunch</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">from sklearn <span class="keyword">import</span> feature_extraction</span><br><span class="line">from sklearn.feature_extraction.<span class="keyword">text</span> <span class="keyword">import</span> TfidfTransformer</span><br><span class="line">from sklearn.feature_extraction.<span class="keyword">text</span> <span class="keyword">import</span> TfidfVectorizer</span><br><span class="line"></span><br><span class="line">def readBunchObj(<span class="built_in">path</span>):</span><br><span class="line">  fileObj = open(<span class="built_in">path</span>,<span class="string">"rb"</span>)</span><br><span class="line">  bunch = pickle.load(fileObj)</span><br><span class="line">  fileObj.close()</span><br><span class="line">  return bunch</span><br><span class="line"></span><br><span class="line">def writeBunchObj(<span class="built_in">path</span>,bunchObj):</span><br><span class="line">  fileObj = open(<span class="built_in">path</span>,<span class="string">"wb"</span>)</span><br><span class="line">  pickle.dump(bunchObj,fileObj)</span><br><span class="line">  fileObj.close()</span><br><span class="line"></span><br><span class="line"><span class="built_in">path</span> = <span class="string">"D:/Data Science Experiment/Chinese Text Clustering/words_bag.dat"</span></span><br><span class="line">bunch = readBunchObj(<span class="built_in">path</span>)</span><br><span class="line"></span><br><span class="line">tfispace = Bunch(target_name = bunch.target_name,label=bunch.label,filename=bunch.filename,tdm=[],vocabulary=[])</span><br><span class="line"></span><br><span class="line">vectorizer=TfidfVectorizer(max_df=<span class="number">0.5</span>)</span><br><span class="line">tansformer = TfidfTransformer()</span><br><span class="line"></span><br><span class="line">tfispace.tdm=vectorizer.fit_transform(bunch.<span class="built_in">contents</span>)</span><br><span class="line">tfispace.vocabulary = vectorizer.vocabulary_</span><br><span class="line"></span><br><span class="line">space_path = <span class="string">"D:/Data Science Experiment/Chinese Text Clustering/tfidf_space.dat"</span></span><br><span class="line">writeBunchObj(space_path,tfispace)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"finished!"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-文本分类方法"><a href="#3-4-文本分类方法" class="headerlink" title="3.4 文本分类方法"></a>3.4 文本分类方法</h3><ol>
+<li>kNN最邻近方法：简单、精度一般、速度慢</li>
+<li>朴素叶贝斯算法：对短文本分类效果好、精度高</li>
+<li>支持向量机算法：支持线性不可分的情况？</li>
+</ol>
+<p>朴素叶贝斯算法实现<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">bayes</span>(<span class="title">obj</span>):</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">_init_</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">self</span>.vocab = []</span><br><span class="line">    <span class="keyword">self</span>.idf = <span class="number">0</span> <span class="comment"># matrix</span></span><br><span class="line">    <span class="keyword">self</span>.tf = <span class="number">0</span> <span class="comment"># matrix</span></span><br><span class="line">    <span class="keyword">self</span>.tdm = <span class="number">0</span> <span class="comment"># P(x|y)</span></span><br><span class="line">    <span class="keyword">self</span>.Pcates = &#123;&#125;</span><br><span class="line">    <span class="keyword">self</span>.labels = []</span><br><span class="line">    <span class="keyword">self</span>.doclenth = <span class="number">0</span></span><br><span class="line">    <span class="keyword">self</span>.vocablen = <span class="number">0</span></span><br><span class="line">    <span class="keyword">self</span>.testset = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">train_set</span><span class="params">(<span class="keyword">self</span>,trainset,classvec)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">self</span>.cate_pro(classvec)</span><br><span class="line">    <span class="keyword">self</span>.doclenth = len(trainset)</span><br><span class="line">    </span><br><span class="line">    tempset = set()</span><br><span class="line">    [tempset.add(word) <span class="keyword">for</span> doc <span class="keyword">in</span> trainset <span class="keyword">for</span> word <span class="keyword">in</span> doc]</span><br><span class="line">    <span class="keyword">self</span>.vocab = list(tempset)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span>.vocablen = len(<span class="keyword">self</span>.vocab)</span><br><span class="line">    <span class="keyword">self</span>.cul_word_freq(trainset)</span><br><span class="line">    <span class="keyword">self</span>.build_tdm()</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">cate_pro</span><span class="params">(<span class="keyword">self</span>,classvec)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">self</span>.labels = classvec</span><br><span class="line">    labeltmp = set(<span class="keyword">self</span>.labels)</span><br><span class="line">    <span class="keyword">for</span> label <span class="keyword">in</span> <span class="symbol">labeltmp:</span></span><br><span class="line">      <span class="keyword">self</span>.Pcates[label] = float(<span class="keyword">self</span>.labels.count(label)/float(len(<span class="keyword">self</span>.labels)))</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">cul_word_freq</span><span class="params">(<span class="keyword">self</span>,trainset)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">self</span>.idf = np.zeros([<span class="number">1</span>,<span class="keyword">self</span>.vocab])  <span class="comment"># build two matrics? </span></span><br><span class="line">    <span class="keyword">self</span>.tf = np.zeros([<span class="keyword">self</span>.doclenth,<span class="keyword">self</span>.vocablen])</span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> range(<span class="keyword">self</span>.doclenth)<span class="symbol">:</span></span><br><span class="line">      <span class="keyword">for</span> word <span class="keyword">in</span> trainset[f]<span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.tf[f,<span class="keyword">self</span>.vocab.index(word)]+=<span class="number">1</span></span><br><span class="line">      <span class="keyword">for</span> signalword <span class="keyword">in</span> set(trainset[f])<span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.idf[<span class="number">0</span>,<span class="keyword">self</span>.vocab.index(signalword)]+=<span class="number">1</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">build_tdm</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">self</span>.tdm = np.zeros([len(<span class="keyword">self</span>.Pcates),<span class="keyword">self</span>.vocablen])</span><br><span class="line">    sumlist = np.zeros(len(<span class="keyword">self</span>.Pcates),<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> range(<span class="keyword">self</span>.doclenth)<span class="symbol">:</span></span><br><span class="line">      <span class="keyword">self</span>.tdm[<span class="keyword">self</span>.labels[index]] = np.sum(<span class="keyword">self</span>.tdm[<span class="keyword">self</span>.labels[index])</span><br><span class="line">    <span class="keyword">self</span>.tdm = <span class="keyword">self</span>.tdm/sumlist</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mapTolist</span><span class="params">(<span class="keyword">self</span>,testdata)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">self</span>.testset = np.zeros([<span class="number">1</span>,<span class="keyword">self</span>.vocablen])</span><br><span class="line">    <span class="keyword">for</span> w <span class="keyword">in</span> <span class="symbol">testdata:</span></span><br><span class="line">      <span class="keyword">self</span>.testset[<span class="number">0</span>,<span class="keyword">self</span>.vocab.index(w)]+=<span class="number">1</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(<span class="keyword">self</span>,testset)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">if</span> np.shape(testset)[<span class="number">1</span>] != <span class="keyword">self</span>.<span class="symbol">vocablen:</span></span><br><span class="line">      print(<span class="string">"dimension error"</span>)</span><br><span class="line">      exit(<span class="number">0</span>)</span><br><span class="line">    <span class="symbol">else:</span></span><br><span class="line">      prevalue = <span class="number">0</span></span><br><span class="line">      preclass <span class="string">""</span></span><br><span class="line">      <span class="keyword">for</span> tdm_vec, keyclass <span class="keyword">in</span> zip(<span class="keyword">self</span>.tdm,<span class="keyword">self</span>.Pcates)<span class="symbol">:</span></span><br><span class="line">        tmp = np.sum(testset * tdm_vec * <span class="keyword">self</span>.Pcates[keyclass])</span><br><span class="line">        <span class="keyword">if</span> tmp &gt; <span class="symbol">prevalue:</span></span><br><span class="line">          prevalue = tmp</span><br><span class="line">          preclass = keyclass</span><br><span class="line">    <span class="keyword">return</span> preclass</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-5-分类结果评估"><a href="#3-5-分类结果评估" class="headerlink" title="3.5 分类结果评估"></a>3.5 分类结果评估</h3><p>机器学习算法评估三指标：<br><strong>召回率Recall Rate</strong><br>相关文件里被检索到的比例<br>$$Recall = {检索到的相关文件数 \over 系统所有相关文件数}$$<br><strong>准确率（精度）Precision</strong><br>检索到的文件里相关文件的比例<br>$$Precision = {检索到的相关文件数 \over 所有检索到的文件数}$$<br><strong>F-Score</strong><br>$$F_t={(t^2+1)PR \over t^2P+R}$$<br>t是参数，P是Precision,R是Recall<br>当t=1时是最常见的F1-Measure<br>P和R的调和平均数<br>$$F_1 = {2PR \over P+R}$$</p>
+<h3 id="3-6-朴素贝叶斯分类算法"><a href="#3-6-朴素贝叶斯分类算法" class="headerlink" title="3.6 朴素贝叶斯分类算法"></a>3.6 朴素贝叶斯分类算法</h3><p>公式推导略</p>
+<h3 id="3-7-KNN分类算法"><a href="#3-7-KNN分类算法" class="headerlink" title="3.7 KNN分类算法"></a>3.7 KNN分类算法</h3><p>k-nearest neighbor<br>A simple ML algorithm that do classification by measuring distances of different features<br>If most of the K-nearest neighbors of a sample in the feature space belong to  a certain class, the sample belongs to it.<br>Steps:</p>
+<ol>
+<li>determine the value of K.(often an odd number)</li>
+<li>determine the formula to calculate distance.(for text classification consine is often used) select the nearest K samples.</li>
+<li>calculate the number of different classes in the K samples. The max is what we look for.</li>
+</ol>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">def cosine(vec1,vec2):</span><br><span class="line">  v1 = <span class="built_in">np</span>.<span class="built_in">array</span>(vec1)</span><br><span class="line">  v2 = <span class="built_in">np</span>.<span class="built_in">array</span>(vec2)</span><br><span class="line">  <span class="built_in">return</span> <span class="built_in">np</span>.dot(v1,v2)/(<span class="built_in">np</span>.linalg.norm(v1)*<span class="built_in">np</span>.linalg.norm(v2))</span><br><span class="line"></span><br><span class="line"># <span class="built_in">return</span> the predited <span class="built_in">label</span> of test_vec</span><br><span class="line">def classify(test_vec, train_set, list_class, k):</span><br><span class="line">  data_set_size = len(train_set)  </span><br><span class="line">  distance = <span class="built_in">np</span>.<span class="built_in">array</span>(<span class="built_in">np</span>.zeros(data_set_size)) # <span class="number">1</span>-D</span><br><span class="line">  <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(data_set_size):</span><br><span class="line">    distance[index] = cosine(test_vec,train_set[index])</span><br><span class="line">  sorted_dist = <span class="built_in">np</span>.argsort(-distance)</span><br><span class="line">  <span class="built_in">print</span>(sorted_dist)</span><br><span class="line">  class_cnt = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">    <span class="built_in">label</span> = list_class[sorted_dist[i]]</span><br><span class="line">    class_cnt[<span class="built_in">label</span>] = class_cnt.<span class="built_in">get</span>(<span class="built_in">label</span>,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">  sorted_class_cnt = sorted(class_cnt.items(), <span class="built_in">key</span>=<span class="built_in">lambda</span> d:d[<span class="number">1</span>], <span class="built_in">reverse</span> = True)</span><br><span class="line">  <span class="built_in">print</span>(sorted_class_cnt)</span><br><span class="line">  <span class="built_in">return</span> sorted_class_cnt[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="4-决策树"><a href="#4-决策树" class="headerlink" title="4 决策树"></a>4 决策树</h2><p>（CLS学习系统–ID3算法–ID4算法–C4.5算法&amp;CART算法）</p>
+<h3 id="4-1-决策树的基本思想"><a href="#4-1-决策树的基本思想" class="headerlink" title="4.1 决策树的基本思想"></a>4.1 决策树的基本思想</h3><p><strong>CLS(Concept Learning System)</strong>: the fundation of decision trees<br>there are three kinds of tree nodes: root, leaf and inner node.(根，叶子，内点)<br>Steps:</p>
+<ol>
+<li>Start from an empty tree. randomly select the first feature as the root.</li>
+<li>Do classification according to a certain condition. If the sub-set classified is empty or labeled the same, this sub-set is leaf. Otherwise, it is an inner node.</li>
+<li>If it is an inner node, select a new label/feature to classify until all sub-sets are leaves.</li>
+</ol>
+<p>根节点和内点是特征，叶子是结果判断<br>树枝是该特征取某个值的概率</p>
+<h3 id="4-2-决策树的算法框架"><a href="#4-2-决策树的算法框架" class="headerlink" title="4.2 决策树的算法框架"></a>4.2 决策树的算法框架</h3><h4 id="1-主函数"><a href="#1-主函数" class="headerlink" title="1. 主函数"></a>1. 主函数</h4><p>递归函数，负责节点生长和结束算法</p>
+<ul>
+<li>输入需要分类的数据集和已知标签</li>
+<li>调用“计算最优特征子函数”：根据某种规则确定最优划分特征，创建特征节点</li>
+<li>调用“划分函数”：按照该特征把数据集划分为若干部分</li>
+<li>构建新的分支节点</li>
+<li>检验递归终止条件</li>
+<li>将新节点的数据集和标签作为输入，递归执行以上步骤</li>
+</ul>
+<h4 id="2-计算最优特征子函数"><a href="#2-计算最优特征子函数" class="headerlink" title="2. 计算最优特征子函数"></a>2. 计算最优特征子函数</h4><p>不同决策树的根本差异<br>遍历当前数据集，评估每个特征，返回最优者</p>
+<h4 id="3-划分函数"><a href="#3-划分函数" class="headerlink" title="3. 划分函数"></a>3. 划分函数</h4><p>分割数据集，删除特征</p>
+<h4 id="4-分类器"><a href="#4-分类器" class="headerlink" title="4. 分类器"></a>4. 分类器</h4><p>分类或预测</p>
+<h3 id="4-3-信息熵测度"><a href="#4-3-信息熵测度" class="headerlink" title="4.3 信息熵测度"></a>4.3 信息熵测度</h3><ul>
+<li>特征离散化：把字符串用整数表示</li>
+<li>选取<strong>无序度</strong>最大的特征作为划分节点</li>
+<li>信息： 对不确定性的消除，从信源的消息转换而成的状态，是随机事件。<br>信源发送什么信息是不确定的，概率大，出现机会多，不确定性就小。</li>
+<li><p>熵Entropy：任何一种能量在空间中分布的均匀程度</p>
+</li>
+<li><p>不确定性函数I称为事件U的信息量，是概率的递减函数<br>$$I(U)=-log(p)$$</p>
+</li>
+<li><p>信源事件有n种取值，对应概率为pi，各事件彼此独立。信源的平均不确定性，也称为<strong>信息熵</strong><br>$$H(U)=E[-log(p<em>i)]=-\sum</em>{i=1}^np_ilog(p_i)$$<br>取2为底，就是信息单位bit<br>某个特征列向量的信息熵大，说明混乱程度高，应优先考虑划分。<br><strong>信息熵</strong>为决策树的划分提供最重要的依据</p>
+</li>
+<li><p>设n个数据的集合为S，具有m个标签。每个标签定义不同的类Ci(i=1-m)，设ni为类Ci中的样本数,pi=ni/n。S的信息熵为<br>$$I(s_1,s_2,..,s<em>m)=-\sum</em>{i=1}^mp_ilog_2(p<em>i)=-\sum</em>{i=1}^m\frac {n_i}n log_2(\frac{n_i}n)$$</p>
+</li>
+<li><p>设特征A具有v个不同值，用特征A将S划分为v个子集{s1,s2…sv}，即v个决策树分支，设nij为子集sj中属于类Ci的样本数。集合S根据A划分之后的信息熵为<br>$$E(A)=\sum<em>{j=1}^v\frac{\sum</em>{i=1}^m s<em>{ij}}nI(s</em>{ij},s<em>{2j}…s</em>{mj})$$<br>$$=\sum<em>{j=1}^v\frac{\sum</em>{i=1}^m s<em>{ij}}n (-\sum</em>{i=1}^mp_{ij}log<em>2(p</em>{ij}))$$<br>$$=\sum<em>{j=1}^v\frac{\sum</em>{i=1}^m s<em>{ij}}n (-\sum</em>{i=1}^m \frac {s_{ij}}{|s_j|}log<em>2(\frac{s</em>{ij}}{|s_j|}))$$</p>
+</li>
+<li><p>信息增益：由于知道属性A的值/根据A做出划分，导致的信息熵的期望压缩<br>$$Gain(A)=I(s_1,s_2,..,s_m)-E(A)$$</p>
+</li>
+</ul>
+<h3 id="4-3-ID3-Decision-Tree"><a href="#4-3-ID3-Decision-Tree" class="headerlink" title="4.3 ID3 Decision Tree"></a>4.3 ID3 Decision Tree</h3><h4 id="ID3-algorithm"><a href="#ID3-algorithm" class="headerlink" title="ID3 algorithm"></a>ID3 algorithm</h4><ul>
+<li>culculate information entropy of the given unsorted sample</li>
+<li>culculate information entropy of each feature</li>
+<li>select the feature with the largest information gain as a root or inner node</li>
+<li>divide the dataset into different sub-sets according to different value of the feature.delete the current feature column. culculate information entropy of the rest. if there is information gain, repeat the steps above.</li>
+<li>if there is only one feature label in a sub-set, stop division.</li>
+</ul>
+<h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ID3_DTree</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">_init_</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.tree = &#123;&#125;</span><br><span class="line">    self.dataset = []</span><br><span class="line">    self.labels = []</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(self)</span>:</span></span><br><span class="line">    labels = copy.deepcopy(self.labels)</span><br><span class="line">    self.tree = self.buildTree(self.dataset,labels)</span><br><span class="line">    </span><br><span class="line">  <span class="string">""" </span></span><br><span class="line"><span class="string">  dataSet input instruction:</span></span><br><span class="line"><span class="string">    row for object, column for feature</span></span><br><span class="line"><span class="string">    the last column is class</span></span><br><span class="line"><span class="string">  """</span>  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">buildTree</span><span class="params">(self,dataset,labels)</span>:</span></span><br><span class="line">    cateList = [data[<span class="number">-1</span>] <span class="keyword">for</span> data <span class="keyword">in</span> dataset]  <span class="comment"># pick up all the classes</span></span><br><span class="line">    <span class="keyword">if</span> cateList.count(cateList[<span class="number">0</span>]) == len(cateList): <span class="comment"># only one feature</span></span><br><span class="line">      <span class="keyword">return</span> cateList[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">if</span> len(dataset[<span class="number">0</span>]) == <span class="number">1</span>: <span class="comment"># no feature!</span></span><br><span class="line">      <span class="keyword">return</span> self.maxCate(cateList)</span><br><span class="line">    bestFeat = self.getBestFeat(dataset)</span><br><span class="line">    bestFeatLabel = labels[bestFeat]</span><br><span class="line">    tree = &#123;bestFeatLabel:&#123;&#125;&#125;</span><br><span class="line">    <span class="keyword">del</span>(labels[bestFeat])</span><br><span class="line">    <span class="comment"># take this column</span></span><br><span class="line">    uniqueVals = set([data[bestFeat] <span class="keyword">for</span> data <span class="keyword">in</span> dataset])</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> uniqueVals:</span><br><span class="line">      subLabels = labels[:] <span class="comment"># deep copy</span></span><br><span class="line">      splitDataSet = self.splitDataSet(dataset,bestFeat,value)</span><br><span class="line">      subTree = self.builTree(splitDataSet,subLabels)</span><br><span class="line">      tree[bestFeatLabel][value] = subTree</span><br><span class="line">    <span class="keyword">return</span> tree</span><br><span class="line">    </span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">      culculate the label that appears mostly</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxCate</span><span class="params">(self,cateList)</span>:</span></span><br><span class="line">      items = dict([(cateList.count(i),i) <span class="keyword">for</span> i <span class="keyword">in</span> cateList])</span><br><span class="line">      <span class="keyword">return</span> items[max(items.keys())]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getBestFeat</span><span class="params">(self,dataset)</span>:</span></span><br><span class="line">      numFeat = len(dataset[<span class="number">0</span>])<span class="number">-1</span></span><br><span class="line">      baseEntropy = self.computeEntropy(dataset)</span><br><span class="line">      bestInfoGain = <span class="number">0.0</span></span><br><span class="line">      bestFeat = <span class="number">-1</span></span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> range(numFeat):</span><br><span class="line">        uniqueVals = set([data[i] <span class="keyword">for</span> data <span class="keyword">in</span> dataset])</span><br><span class="line">        newEntropy = <span class="number">0.0</span></span><br><span class="line">        <span class="keyword">for</span> value <span class="keyword">in</span> uniqueVals:</span><br><span class="line">          subDataSet = self.splitDataSet(dataset,i,value)</span><br><span class="line">          prob = len(subDataSet)/float(len(dataset))</span><br><span class="line">          newEntropy += prob * self.computeEntropy(subDataSet)</span><br><span class="line">        infoGain = baseEntropy - newEntropy</span><br><span class="line">        <span class="keyword">if</span> infoGain &gt; bestInfoGain:</span><br><span class="line">          <span class="comment"># painter's method</span></span><br><span class="line">          bestInfoGain = infoGain</span><br><span class="line">          bestFeat = i</span><br><span class="line">        <span class="keyword">return</span> bestFeat</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">computeEntropy</span><span class="params">(self,dataset)</span>:</span></span><br><span class="line">      datalen = float(len(dataset))</span><br><span class="line">      cateList = [data[<span class="number">-1</span>] <span class="keyword">for</span> data <span class="keyword">in</span> dataset]</span><br><span class="line">      items = dict([(i,cateList.count(i)) <span class="keyword">for</span> i <span class="keyword">in</span> cateList])</span><br><span class="line">      infoEntropy = <span class="number">0.0</span></span><br><span class="line">      <span class="keyword">for</span> key <span class="keyword">in</span> items:</span><br><span class="line">        prob = float(items[key])/datalen</span><br><span class="line">        infoEntropy -= prob * math.log(prob,<span class="number">2</span>)</span><br><span class="line">      <span class="keyword">return</span> infoEntropy</span><br><span class="line">      </span><br><span class="line">    <span class="comment"># abundon all the unit in column['axis'] with 'value' </span></span><br><span class="line">    <span class="comment"># so that te dataset could be compressed.</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">splitDataSet</span><span class="params">(self,dataset,axis,value)</span>:</span></span><br><span class="line">      rList = []</span><br><span class="line">      <span class="keyword">for</span> featVec <span class="keyword">in</span> dataset:</span><br><span class="line">        <span class="keyword">if</span> featVec[axis] == value:</span><br><span class="line">          rFeatVec = featVec[:axis]</span><br><span class="line">          rFeatVec.extend(featVec[axis+<span class="number">1</span>:])</span><br><span class="line">          rList.append(rFeatVec)</span><br><span class="line">      <span class="keyword">return</span> rList</span><br><span class="line">      </span><br><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self,testVec)</span>:</span></span><br><span class="line">      root = self.tree.key()[<span class="number">0</span>]</span><br><span class="line">      secondDict = self.tree[root]</span><br><span class="line">      featIndex = self.labels.index(root)</span><br><span class="line">      key = testVec[featIndex]</span><br><span class="line">      valueOfFeat = secondDict[key]</span><br><span class="line">      <span class="keyword">if</span> isinstance(valueOfFeat,dict): <span class="comment"># judge whether it is a dictionary</span></span><br><span class="line">        classLabel = self.predict(valueOfFeat,self.labels,testVec)</span><br><span class="line">      <span class="keyword">else</span>:</span><br><span class="line">        classLabel = valueOfFeat</span><br><span class="line">      <span class="keyword">return</span> classLabel</span><br></pre></td></tr></table></figure>
+<ul>
+<li>flaws<br>信息增益偏向选择特征值个数较多的特征，取值个数多不一定最优。<br>大型数据会生成层次和分支很多的决策树，其中某些分支的特征值概率很低，如果不加忽略就会过分拟合。</li>
+</ul>
+<h3 id="4-4-C4-5算法"><a href="#4-4-C4-5算法" class="headerlink" title="4.4 C4.5算法"></a>4.4 C4.5算法</h3><p>用 信息增益率 代替信息增益<br>$$GainRatio(S,A)=\frac{Gain(S,A)}{-\sum<em>{i=1}^mp</em>{ij}log<em>2(p</em>{ij})}$$<br>$$ = {-\sum_{i=1}^m\frac {n_i}n log_2(\frac{n<em>i}n)-\sum</em>{j=1}^v\frac{\sum<em>{i=1}^m s</em>{ij}}n (-\sum<em>{i=1}^m \frac {s</em>{ij}}{|s_j|}log<em>2(\frac{s</em>{ij}}{|s<em>j|})) \over -\sum</em>{i=1}^m \frac {s_{ij}}{|s_j|}log<em>2(\frac{s</em>{ij}}{|s_j|}) }$$</p>
+<h3 id="4-5-回归树"><a href="#4-5-回归树" class="headerlink" title="4.5 回归树"></a>4.5 回归树</h3><h4 id="回归算法原理"><a href="#回归算法原理" class="headerlink" title="回归算法原理"></a>回归算法原理</h4><p>Classification and regression tree(CART)成熟广泛应用<br>通过决策树实现回归<br>回归模型中，样本取值分为观察值和输出值，都是<strong>连续</strong>的。<br>CART使用最小剩余方差(Squared Residuals Minimization)判定回归树的最优划分.使用线性回归模型进行建模。如果难以拟合，继续划分子树。直到所有叶子节点都是线性回归模型。</p>
+<h4 id="最小剩余方差-Squared-Residuals-Minimization"><a href="#最小剩余方差-Squared-Residuals-Minimization" class="headerlink" title="最小剩余方差(Squared Residuals Minimization)"></a>最小剩余方差(Squared Residuals Minimization)</h4><p>二重循环遍历每个特征列的所有样本点，在每个样本点上二分数据集，计算出最小的总方差（划分后的两个子集总方差之和）<br>总方差是每个数据与均值的方差的和。</p>
+<h4 id="模型树"><a href="#模型树" class="headerlink" title="模型树"></a>模型树</h4><p>叶子是一系列分段线性函数，是对原数据曲线得到模拟。<br>模型树还有很多性质</p>
+<h4 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h4><p>连续数据会生出大量分支，需要对预测树剪枝<br>先剪枝：预定义划分阀值，低于阀值划分停止<br>后剪枝：计算内点的误判率，当子树的误判个数减去标准差后大于对应叶子节点的误判个数，就决定剪枝。</p>
+<h4 id="Scikit-Learn-对回归树的实现"><a href="#Scikit-Learn-对回归树的实现" class="headerlink" title="Scikit-Learn 对回归树的实现"></a>Scikit-Learn 对回归树的实现</h4><h2 id="5-推荐系统原理"><a href="#5-推荐系统原理" class="headerlink" title="5 推荐系统原理"></a>5 推荐系统原理</h2><h3 id="5-1"><a href="#5-1" class="headerlink" title="5.1"></a>5.1</h3><p>经常一起购买的商品（打包销售）、购买此商品的客户也同时购买（协同过滤）、看过此商品后的客户买的其他商品、商品评分列表、商品评论列表</p>
+<p>推荐系统的架构 （图）</p>
+<p>推荐算法</p>
+<ul>
+<li>基于人口统计学的推荐机制</li>
+<li>基于内容的推荐</li>
+<li>基于协同过滤的推荐：基于用户、基于项目</li>
+<li>基于隐语义/模型的推荐：SVD隐语义模型</li>
+</ul>
+<h3 id="5-2-协同过滤"><a href="#5-2-协同过滤" class="headerlink" title="5.2 协同过滤"></a>5.2 协同过滤</h3><p>CF Collaborative Filtering<br>分为基于用户和基于项目：找到具有类似品味的人喜欢的物品、找到与喜欢的物品类似的物品</p>
+<h4 id="1-数据预处理"><a href="#1-数据预处理" class="headerlink" title="1. 数据预处理"></a>1. 数据预处理</h4><p>对用户行为分组、加权<br>减噪（利用减噪算法）、归一化（统一量纲，除以最大值）<br>进行聚类，降低计算量</p>
+<h4 id="2-使用scikit-Learn的KMeans聚类"><a href="#2-使用scikit-Learn的KMeans聚类" class="headerlink" title="2. 使用scikit-Learn的KMeans聚类"></a>2. 使用scikit-Learn的KMeans聚类</h4><p>给定划分的个数k。<br>创建初始划分，随机选择k个对象，各自代表聚类中心。其他对象属于离它最近的聚类。<br>迭代。当有新的对象加入或者离开某聚类时，重新计算聚类中心，然后重新分配。不断重复，直到没有聚类中的对象变化。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.cluster import KMeans</span><br><span class="line">kmeans = KMeans(<span class="attribute">init</span>=<span class="string">'k-mean++'</span>,n_cluster=4)</span><br><span class="line">kmeans.fit(dataMatrix)</span><br><span class="line">kmeans.cluster_centers_</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-User-CF-原理"><a href="#3-User-CF-原理" class="headerlink" title="3. User CF 原理"></a>3. User CF 原理</h4><p>User Item矩阵：行是用户列表，列是物品列表，矩阵值是用户偏好数值。</p>
+<p>用户相似度矩阵：按行归一化，一行总和为1</p>
+<ul>
+<li>一个用户的偏好是一个向量，利用聚类算法，基于用户对物品的偏好划分用户类型；</li>
+<li>用KNN邻近算法找到最邻近的用户，根据相似度权重和对物品的偏好，预测当前用户可能有偏好的物品</li>
+<li>用户甲与用户乙相似，则将用户乙购买的商品推荐给用户甲</li>
+</ul>
+<p>相似度的评判使用距离函数：<br>欧氏距离、相关系数、Jaccard距离、余弦距离</p>
+<h4 id="4-Item-CF-原理"><a href="#4-Item-CF-原理" class="headerlink" title="4. Item CF 原理"></a>4. Item CF 原理</h4><p>应用普遍广泛<br>物品相似度矩阵：按列归一化，一列的和为1</p>
+<ul>
+<li>根据用户偏好划分物品类型（聚类算法），计算物品之间的相似度（KNN算法），找最邻近的物品，预测当前用户可能有偏好的物品</li>
+<li>物品A与物品B相似，则将物品A推荐给购买物品B的用户</li>
+</ul>
+<p>问题：人为分类对推荐算法造成影响；物品相似度受个人消费影响，用户难以加权<br>需要一种算法针对每类用户的不同消费行为计算不同物品的相似度</p>
+<h4 id="5-SVD-原理"><a href="#5-SVD-原理" class="headerlink" title="5. SVD 原理"></a>5. SVD 原理</h4><p>隐语义模型（奇异值分解，SVD）通过隐含特征计算相似性<br>Singular Value Decomposition<br>The singular value docomposition of a m<em>n real or complex matrix $M$ is the factorization of the form $U\sum{}V^T$, where $U$ is a m</em>m orthonormal matrix, $\sum{}$ is a rectangle diagonal matrix with no negative value in diagonal, and $V$ is a n<em>n orthonormal matrix.<br>The diagnoal entries of $\sum{}$ is the <em>*singular values</em></em> of $M$.<br>$U$ is called the left-singular vector. $V$ is called the right-singular vector.<br>$U$ is a set of orthonormal eigenvectors of $MM^T$.<br>$V$ is a set of orthonormal eigenvectors of $M^TM$.  So it can be got by solving $(MM^T)V=\lambda{}V$.<br>$s = \sqrt{\lambda}$<br>$U = \frac{MV}{s}$</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">U</span>,s,V = np.linalg.svd(<span class="keyword">matrix</span>)</span><br><span class="line"># s is <span class="keyword">in</span> decending <span class="keyword">sort</span>, <span class="keyword">so</span> you cannot find <span class="keyword">out</span> the unsorted <span class="built_in">s</span></span><br></pre></td></tr></table></figure>
+<p>but why it works?<br>奇异值在$\sum{}$中按降序排列，衰减特别快，前10%甚至1%的奇异值占了奇异值总和的99%，所以可以用前几个奇异值来近似描述矩阵。奇异值由矩阵本身唯一决定.</p>
+<p>Partial SVD（部分奇异值分解）：<br>$M<em>{m\times n} \approx U</em>{m\times r}\sum<em>{r\times r}V</em>{r\times n}$<br>where r&lt;&lt; m and n<br>储存UsV可以节省空间</p>
+<p>DIY SVD<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">def <span class="built_in">SVD</span>(M):</span><br><span class="line">    lam,hU = np.linalg.<span class="built_in">eig</span>(<span class="keyword">Matrix</span>*<span class="keyword">Matrix</span> * M.T)</span><br><span class="line">    eV, hVT = np.linalg.<span class="built_in">eig</span>(<span class="keyword">Matrix</span>.T*<span class="keyword">Matrix</span>.T * M)</span><br><span class="line">    hV = hVT.T</span><br><span class="line">    sigma = np.<span class="built_in">sqrt</span>(lam)</span><br><span class="line">    <span class="keyword">return</span> hU, sigma, hV</span><br></pre></td></tr></table></figure></p>
+<p>分解之后，U,s,V都取前r个值，计算出待测算的向量。<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">U,s,V = np.linalg.svd(dataset.T)</span><br><span class="line">V = V.T</span><br><span class="line">Ur = U[:,:r]</span><br><span class="line">Sr = np.diag(s)[:r,:r]</span><br><span class="line">Vr = V[:,:r]</span><br><span class="line">testResult = testVec * Ur * np.linalg.inv(Sr)</span><br><span class="line">result = array([dist(testResult,vi) for vi in Vr])</span><br><span class="line">descIndex = argsort(-result)[:r]</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-3-KMeans评估"><a href="#5-3-KMeans评估" class="headerlink" title="5.3 KMeans评估"></a>5.3 KMeans评估</h3><p>簇：有距离相近的对象组成</p>
+<ul>
+<li>从N个点中随机选取K个作为质心</li>
+<li>测量剩余文档到质心的距离，归入最近的类</li>
+<li>重新计算各类质心</li>
+<li>迭代上述步骤。直到新质心与原质心相等或者距离不超过阀值。</li>
+</ul>
+<p>KMeans不总是能找到正确的聚类。<br>KMeans擅长处理球状分布的数据，当类与类之间的区别比较明显时，效果较好。<br>复杂度为O(nkt)，n是对象个数，k是簇的个数，t是迭代次数。</p>
+<p>问题：<br>初始点选择影响迭代次数或者限于某个局部最优状态（？）<br>K要事先给出，不同数据集之间没有可借鉴性<br>对噪声和孤立点敏感</p>
+<h3 id="5-4-二分KMeans算法"><a href="#5-4-二分KMeans算法" class="headerlink" title="5.4 二分KMeans算法"></a>5.4 二分KMeans算法</h3><p>Bitseting KMeans</p>
+<ul>
+<li>将所有点作为一个簇，一分为二</li>
+<li>选择能够最大限度降低聚类代价函数（误差平方和）的簇，一分为二</li>
+<li>以此进行下去，直到簇的数目等于给定数目K</li>
+</ul>
+<p>原理：聚类的误差平方和越小，数据点越接近质心，越密集；误差平方和越大，有可能多个簇被划分为一个。</p>
+<p>代码略</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/11/30/ML algorithm and practice(Advanced)/" style="float: left;">
+        ← Machine learning algorithm and practice(Advanced)
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/11/28/概率论笔记/">
+        概率论笔记 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By ZIYUAN FENG. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/FengZiYjun" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
