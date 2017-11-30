@@ -207,7 +207,7 @@
                 <div class="col-md-8">
                     <p class="index-excerpt">
                       
-                        ML algorithm and practice(Advanced)六、梯度寻优6.1 最优化与计算复杂性最优化理论试图解决多元化、非线性的问题。最早的优化方法是线性规划。最优化理论三个重要基础： 
+                        六、梯度寻优6.1 最优化与计算复杂性最优化理论试图解决多元化、非线性的问题。最早的优化方法是线性规划。最优化理论三个重要基础： 
 
 矩阵理论
 数值分析
@@ -219,7 +219,7 @@
 公式推导
 算法设计
 
-最优化：在给定约束条件下寻求某些量，使得某些量达到最优。$$min_{x\in{R}}f(x),(maxf(x)) s.t.h_i(x)=0,
+最优化：在给定约束条件下寻求某些量，使得某些量达到最优。$$min_{x\in{R}}f(x),(maxf(x)) s.t.h_i(x)=0, g_j(x)&lt;=0$$x为决策变量，$f(x)$为目标函数或c
                       
                     </p>
                     
@@ -249,8 +249,7 @@
                 <div class="col-md-8">
                     <p class="index-excerpt">
                       
-                        ML algorithm and practice(Basic)
-1.  矢量编程基础矩阵
+                        1.  矢量编程基础矩阵
 对象是矩阵的一行，特征是矩阵的一列例如：
 
 词袋列表：若干文本提取出不同的词组成的集合词向量空间：文本-词袋构成的整数值矩阵
@@ -258,7 +257,8 @@
 分类/聚类 看作是根据对象特征的相似性和差异性，对矩阵空间的划分
 预测/回归 看作是根据对象在某种序列（时间）上的相关性，表现特征取值变化的趋势
 
-三个方向的用途：解线性方程：通过计算距离方程降次：二次型 升维变换：维度
+三个方向的用途：解线性方程：通过计算距离方程降次：二次型 升维变换：维度约简
+矢量化编程基于矩阵的基本运算MATLAB 和python的矩
                       
                     </p>
                     
@@ -288,8 +288,7 @@
                 <div class="col-md-8">
                     <p class="index-excerpt">
                       
-                        概率论笔记
-随机事件样本空间、随机事件、随机变量、
+                        随机事件样本空间、随机事件、随机变量、
 事件关系
 包含
 相等
@@ -306,7 +305,8 @@
 可列可加性（互斥事件的和的概率，等于概率的和）
 
 古典概率
-随机现象包含有限
+随机现象包含有限样本点
+样本
                       
                     </p>
                     
@@ -336,11 +336,10 @@
                 <div class="col-md-8">
                     <p class="index-excerpt">
                       
-                        Python Advanced
-函数元组类型可变长参数在参数名前加`def f(list): pass`f(1,2,3,4,5)
+                        函数元组类型可变长参数在参数名前加`def f(list): pass`f(1,2,3,4,5)
 字典类型可变长参数在参数名前加`def f(dict): pass`f(x=1,y=2,z=3)
 高阶函数高阶函数，是参数为函数对象的函数函数名的赋值就是函数对象赋值def f(x): passg = fdef F(f,x): f(x) 形参f的类型是函数对象F(g,10)
-函数变量作用域Local &gt;
+函数变量作用域Local &gt; Enclosing &gt; 
                       
                     </p>
                     
@@ -370,12 +369,15 @@
                 <div class="col-md-8">
                     <p class="index-excerpt">
                       
-                        Regular Expression
+                        
 basic token
 match any single character.
 match a former character
 {n} exactly n times{n,} at least n times{n,m} at least n times, at most m times
-?  0 or once  = {0,1}*  any times  = {0,}+  once or more
+?  0 or once  = {0,1}*  any times  = {0,}+  once or more = {1,}
+
+
+use \ to
                       
                     </p>
                     
@@ -405,8 +407,8 @@ match a former character
                 <div class="col-md-8">
                     <p class="index-excerpt">
                       
-                        Vim notes1. changes between three modesi or a : ordinary mode –&gt; insertion mode‘:’ ordinary mode –&gt; command line modeEsc: other modes –&gt; ordinary mode
-2. exit vimin command mode:wq or :x save and quit:q quit:q! 
+                        1. changes between three modesi or a : ordinary mode –&gt; insertion mode‘:’ ordinary mode –&gt; command line modeEsc: other modes –&gt; ordinary mode
+2. exit vimin command mode:wq or :x save and quit:q quit:q! forced qu
                       
                     </p>
                     
@@ -436,9 +438,9 @@ match a former character
                 <div class="col-md-8">
                     <p class="index-excerpt">
                       
-                        Git Basic1. initial configurationgit config -global user.name &quot;?&quot;git config -global user.email &quot;?&quot;``
+                        1. initial configurationgit config -global user.name &quot;?&quot;git config -global user.email &quot;?&quot;``
 to checkcat ~/.gitconfig`
-2. get a git reposary2.1 clonegit clone http://git.?.com/?/project_namego
+2. get a git reposary2.1 clonegit clone http://git.?.com/?/project_namego into the
                       
                     </p>
                     
