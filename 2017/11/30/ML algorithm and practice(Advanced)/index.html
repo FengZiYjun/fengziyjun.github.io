@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Machine learning algorithm and practice(Advanced) | ZIYUAN FENG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="ZIYUAN FENG">
+    <meta name="author" content="ZIYUAN FENG">
+    <meta name="description" content="fzy's blog" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="ZIYUAN FENG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="/aboutme/index.html" class="animsition-link">AboutMe</a></li>
+                    
+                    <li><a href="https://github.com/FengZiYjun" class="animsition-link">Github</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/FA_logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">ZIYUAN FENG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/FengZiYjun" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-11-30T01:55:09.079Z" itemprop="datePublished">
+          2017-11-30
+      </time>
+    
+</span>
+                <h1>Machine learning algorithm and practice(Advanced)</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="六、梯度寻优"><a href="#六、梯度寻优" class="headerlink" title="六、梯度寻优"></a>六、梯度寻优</h2><h3 id="6-1-最优化与计算复杂性"><a href="#6-1-最优化与计算复杂性" class="headerlink" title="6.1 最优化与计算复杂性"></a>6.1 最优化与计算复杂性</h3><p>最优化理论试图解决多元化、非线性的问题。最早的优化方法是线性规划。<br>最优化理论三个重要基础： </p>
+<ul>
+<li>矩阵理论</li>
+<li>数值分析</li>
+<li>计算机</li>
+</ul>
+<p>解决最优化问题需要三种能力：</p>
+<ul>
+<li>数学建模</li>
+<li>公式推导</li>
+<li>算法设计</li>
+</ul>
+<p>最优化：在给定约束条件下寻求某些量，使得某些量达到最优。<br>$$min_{x\in{R}}f(x),(maxf(x)) s.t.h_i(x)=0, g_j(x)&lt;=0$$<br>x为决策变量，$f(x)$为目标函数或cost function。<br>最优化问题分为：<br>线性规划（都是线性函数）<br>非线性规划（至少有一个是非线性函数）<br>二次规划（目标函数为二次，约束函数为线性）<br>多目标规划（目标函数是向量函数）等等</p>
+<h3 id="6-2-凸集与分离定理"><a href="#6-2-凸集与分离定理" class="headerlink" title="6.2 凸集与分离定理"></a>6.2 凸集与分离定理</h3><ol>
+<li><p>凸集定义<br>设$X\subseteq{R^n}$，$X$是凸集，当且仅当：<br>$\alpha x_1+(1-\alpha )x_2 \in{X}, \forall x_1,x_2\in{X},\forall \alpha\in{[0,1]}$<br>如果一个集合是凸集，那么任意两个点连线上任意一点也位于该集合中。</p>
+</li>
+<li><p>超平面定义<br>$X = {x|c^Tx=z}$<br>c为系数向量，z是标量，集合X为超平面。<br>超平面能把凸集分为两部分$c^Tx\leq z$和$c^Tx\geq z$<br><strong>支撑超平面</strong>：过凸集的一个边界点，使得凸集所有点都位于超平面的一侧</p>
+</li>
+<li><p>凸集分离定理<br>设$S_1,S_2\subseteq{R^n}$,如果存在非零向量$p\in{R^n}$以及$\alpha\in{R}$，使得<br>$$S_1\subseteq{H^-}={x\in{R^n}|p^Tx\leq\alpha}\<br>S_2\subseteq{H^+}={x\in{R^n}|p^Tx\geq\alpha}$$<br>则称超平面$H={x\in{R^n}|p^Tx=\alpha}$分离了集合$S_1$和$S_2$.</p>
+</li>
+</ol>
+<p>分离定理为机器学习的分类问题提供理论依据。带有不同标签的训练集是凸集，分隔它们的平面就是线性分类器。</p>
+<p>###6.3 凸函数<br>若定义某个向量空间的凸子集上的函数$f$，对于任意两点$x_1,x_2$以及$\alpha \in{[0,1]}$，都有<br>$$f(\alpha x_1+(1-\alpha)x_2)\leq f(\alpha x_1)+f((1-\alpha)x_2)$$<br>则函数$f$是凸函数。<br>任意两点的线性组合的函数值小于任意两点函数值的线性组合。<br>因为凸集元素可以是离散的，所以凸函数不要求连续。</p>
+<p>凸函数的判定：</p>
+<ol>
+<li>若$f(x)$是凸函数，则$\alpha f(x)$也是凸函数$(\alpha\geq0)$。</li>
+<li>若$f_1,f_2\dots f<em>k$是凸集$S$上的凸函数，则$\sum</em>{i=1}^k\lambda_if_i(x),\forall\lambda<em>i\geq0$和$\max</em>{1\leq i\leq k}f_i(x)$也是$S$上的凸函数。</li>
+<li>设$f(x)$在凸集$S$上可微，则$f(x)$为凸函数的充要条件是，对任意的$x_,y$都有$$f(y)\geq f(x)+\nabla f(x)^T(y-x) $$其中$\nabla f=grad f$</li>
+<li>设在开凸集$D\subseteq{R^n}$内，$f(x)$二阶可微，则$f(x)$为$D$的凸函数的充要条件是，对任意的$x\in{D}$，$f(x)$的hesse矩阵半正定。$$G(x)=\nabla ^2f(x)=二阶偏导矩阵$$</li>
+</ol>
+<p>常用凸函数：  </p>
+<ul>
+<li>线性函数和仿射函数（一阶多项式函数）</li>
+<li>最大值函数</li>
+<li>幂函数、绝对值幂函数</li>
+<li>对数函数、指数和的对数函数</li>
+<li>几何平均</li>
+<li>范数</li>
+</ul>
+<p>凸函数的性质：</p>
+<ul>
+<li>凸优化的任一局部极小值也是全局极小值，且全局极小点的集合为凸集？</li>
+<li>凸优化的任一局部最优解都是它的全局最优解？</li>
+</ul>
+<p>机器学习使用最优化方法的目标函数几乎都是凸函数。无法转化为凸函数的优化问题用穷举法或者一些随机优化方法解决。</p>
+<h3 id="6-4-计算复杂性"><a href="#6-4-计算复杂性" class="headerlink" title="6.4 计算复杂性"></a>6.4 计算复杂性</h3><p>自动机常指基于状态变化进行迭代的算法。</p>
+<p><strong>确定性</strong>：根据输入和当前状态，自动机的状态转移是唯一确定的。<br>程序下一步的结果是唯一的，返回的结果是唯一的。</p>
+<p><strong>非确定性</strong>：在每一时刻有多种状态可供选择，并尝试执行每个可选择状态。<br>运行时每个执行路径是并行的，所有路径都可能返回结果；只要有一个路径返回结果，算法就结束。<br>在求解最优化问题时，非确定性算法可能陷入局部最优，不一定是全局最优。</p>
+<p><strong>P类</strong>问题：能够以多项式时间的确定性算法对问题进行判定或求解。<br><strong>NP类</strong>问题：用多项式时间的非确定性算法来判定或求解<br><strong>NP-complete</strong>问题：至今没有找到多项式时间的算法</p>
+<p>典型的NP类问题：</p>
+<ul>
+<li>背包问题。一种组合优化的NP完全问题。</li>
+<li>最短路径问题</li>
+<li>货郎担问题(Travelling Sales Person问题)。找最短哈密顿回路。属于多局部最优问题。用模拟退火算法。</li>
+<li>最大团问题。给定无向图和正整数K，是否存在具有K个顶点的完全子图。在概率图模型中，求取最大团是典型的智能推理算法。</li>
+<li>图同构问题。在自然语言中，图同构是知识推理的一部分。</li>
+</ul>
+<h3 id="6-5-迭代法解方程组"><a href="#6-5-迭代法解方程组" class="headerlink" title="6.5 迭代法解方程组"></a>6.5 迭代法解方程组</h3><p>针对大型稀疏矩阵方程组</p>
+<p>将原方程$f(x)=0$化为等价形式$$x=F(x)$$取一个初值$x<em>0$，按照$x</em>{k+1}=F(x_k),k=0,1,2\dots $产生序列${x_k}$。这样的计算过程成为迭代。<br>迭代过程中，根据相邻两次迭代值是否满足精度要求，决定迭代是否继续。</p>
+<p>从泰勒公式推导出牛顿迭代法(牛顿切线法)：$$F(x)=x-\frac{f(x)}{f’(x)}$$切线法收敛速度为平方。<br>如果求导不容易，可以考虑割线法，收敛速度为黄金1.618。用${f(x<em>k)-f(x</em>{k-1})\over x<em>k-x</em>{k-1}}$代替$f’(x)$。</p>
+<p>定理：设$f(x)$在[a,b]中有二阶连续导数，且满足条件<br>(1) $f(a)<em>f(b)&lt; 0 $<br>(2) $f’(x)$ 在(a,b)保号<br>(3) $f’’(x)$ 在(a,b)保号<br>取(a,b)中满足$f(x_0)</em>f’’(x_0)&gt;0$的一点$x_0$, 以它为初值的牛顿迭代过程产生的序列${x_k}$单调收敛于方程$f(x)=0$在[a,b]中的唯一解。</p>
+<p>对于矩阵方程$Ax=b$，使用迭代法 $x^{(k+1)}=B<em>0x^{(k)}+f,  k=0,1,2\dots$<br>迭代法收敛的条件是，$\lim</em>{k\to\infty}x^{（k）}$存在</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def iteration_solve(B0,f):</span><br><span class="line">    # assert(column of B0==<span class="built_in">row</span> of f)</span><br><span class="line">    <span class="built_in">error</span> = <span class="number">1.0e-6</span></span><br><span class="line">    steps = <span class="number">100</span></span><br><span class="line">    r,n = shape(B0)</span><br><span class="line">    xk = <span class="built_in">np</span>.zeros([n,<span class="number">1</span>])</span><br><span class="line">    errorlist = []</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(steps):</span><br><span class="line">        xk1 = xk</span><br><span class="line">        xk = B0 * xk + f</span><br><span class="line">        errorlist.<span class="built_in">append</span>(<span class="built_in">np</span>.linalg.norm(xk-xk1))</span><br><span class="line">        <span class="keyword">if</span> errorlist[-<span class="number">1</span>] &lt; <span class="built_in">error</span>:</span><br><span class="line">            <span class="built_in">print</span>(k+<span class="number">1</span>)</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line">    <span class="built_in">return</span> xk, errorlist</span><br></pre></td></tr></table></figure>
+<p>问题: 如果目标函数是非线性的，误差往哪个方向下降最快？<br>函数导数的方向，多元微积分中的梯度。</p>
+<h3 id="6-6-Logistic梯度下降法"><a href="#6-6-Logistic梯度下降法" class="headerlink" title="6.6 Logistic梯度下降法"></a>6.6 Logistic梯度下降法</h3><h4 id="1-梯度下降法"><a href="#1-梯度下降法" class="headerlink" title="1. 梯度下降法"></a>1. 梯度下降法</h4><p>求解无约束多元函数值极值的数值方法<br>沿梯度方向向量值函数变化速率最快<br>为了求取$f(x)$的极小值，任取一个点$x_0$，设$\rho_k$为第k次迭代时的步长<br>$$\nabla^{(k)}=-{\nabla f(x_k) \over ||\nabla f(x<em>k)||}\<br>x</em>{k+1}=x_k + \rho_k \nabla^{(k)}$$<br>产生序列${x_k}$，收敛于$f(x)$极小值。<br>$\rho$的选择影响算法收敛速度。过小会很慢，过大会发散。</p>
+<h4 id="2-线性分类器"><a href="#2-线性分类器" class="headerlink" title="2. 线性分类器"></a>2. 线性分类器</h4><p>把代表训练集的两个互不相交的凸集的子集分开的支撑超平面，如果是一个n维的线性方程，就称为<strong>线性分类器</strong>。<br>也是最早得到神经网络模型，叫感知器模型。<br>感知器 = 算法框架 + 激活函数</p>
+<ul>
+<li>算法框架$f(x) = w^Tx + b$</li>
+<li>激活函数$Logistic$函数</li>
+</ul>
+<p>Logistic函数：<br>$$logistic(x) = {1 \over 1+e^{-w^Tx}}$$<br>是凸函数，局部最优就是全局最优。</p>
+<p>若输出标签Y为{0,1}，令$P{Y=1|x} = p(x) = {1 \over 1+e^{-w^Tx}}$,那么$P{Y=0|x} = 1-p(x) = {1 \over 1+e^{w^Tx}}$,$$ln{\frac{P{Y=1|x}}{P{Y=0|x}}}=ln{p(x)\over 1-p(x)}=w^Tx$$<br>为什么权重乘样本矩阵是梯度？？？</p>
+<p>假设样本集之间互相独立，它们的联合分布可以表示为各边际分布的乘积。用似然函数表示$$l(w)=\prod_{i=1}^n(P{Y=1|x_i})^{y_i}(1-P{Y=1|x_i})^{1-y<em>i}$$<br>取对数似然函数$$L(w)=ln(l(w))=\sum</em>{i=1}^ny_iw^Tx<em>i - \sum</em>{i=1}^nln(1+e^{w^Tx_i})$$<br>这是线性分类器的目标函数，以权重向量w为自变量</p>
+<p>对w求偏导$$\frac{\partial L(w)}{\partial w} = \sum_{i=1}^n{(y_i-{1 \over 1+e^{-w^Tx_i}})}x_i$$<br>就是误差函数error = classLabel - logistic</p>
+<h4 id="3-算法流程"><a href="#3-算法流程" class="headerlink" title="3. 算法流程"></a>3. 算法流程</h4><p>输入：自带分类标签的样本矩阵$x$<br>预处理：提取classLabel，归一化，插入第一列（？）<br>调参数：迭代次数steps，梯度下降的步长$\alpha$<br>初始化：权重向量$w$全0<br>训练分类器：当前结果与分类标签比对，生成误差向量: error = classLabel - logistic,通过迭代修正误差$$w_{k+1}=w_k＋\alpha \times x^T \times error $$<br>输出：权重向量$w$，作为分类器$f(x) = w^Tx + b$的参数<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">weights = <span class="built_in">np</span>.ones([n,<span class="number">1</span>])</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(steps):</span><br><span class="line">    gradient = dataMatrix * mat(weights)</span><br><span class="line">    output = logistic(gradient)</span><br><span class="line">    <span class="built_in">errors</span> = classLabels - output</span><br><span class="line">    weights = weights + alpha * dataMatrix.T * <span class="built_in">errors</span></span><br></pre></td></tr></table></figure></p>
+<p>权重向量$w$代表分隔空间的超平面。超平面的方程由权重向量$w$决定。</p>
+<p>其实这只是一种回归？？？</p>
+<p>算法分析：<br>考察超平面的各参数或者权重向量的各分量是否达到“平稳”，若否，需要增加迭代次数。（或优化模型）</p>
+<p>问题：步长取值如何平衡收敛速度和精度的矛盾？</p>
+<h3 id="6-7-随机梯度下降法"><a href="#6-7-随机梯度下降法" class="headerlink" title="6.7 随机梯度下降法"></a>6.7 随机梯度下降法</h3><p>引入随即样本抽取方式，提供动态步长取值，平衡精度和收敛速度<br>$\alpha = {2 \over 1.0+i+j}+0.0001$<br>i是迭代次数，j是抽取次数，2与样本均值相关。<br>改矢量编程为标量编程，用效率的降低换取迭代次数的显著下降<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(steps):</span><br><span class="line">    index = <span class="built_in">range</span>(rowsNum)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(rowNum):</span><br><span class="line">        # <span class="keyword">step</span> <span class="built_in">length</span> <span class="built_in">is</span> changed with i <span class="keyword">and</span> j</span><br><span class="line">        alpha = <span class="number">2</span>/(<span class="number">1.0</span>+i+j)+<span class="number">0.0001</span></span><br><span class="line">        # select an index randomly</span><br><span class="line">        randIndex = int(<span class="built_in">random</span>.uniform(<span class="number">0</span>,len(index))) </span><br><span class="line">        vecSum = <span class="built_in">sum</span>(dataMatrix[randIndex]*weights.T)</span><br><span class="line">        grad = logistic(vecSum)</span><br><span class="line">        <span class="built_in">errors</span> = classLabel[randIndex] - grad</span><br><span class="line">        weights = weights + alpha * <span class="built_in">errors</span> * dataMatrix[randIndex]</span><br><span class="line">        <span class="built_in">del</span>(index[randIndex])</span><br></pre></td></tr></table></figure></p>
+<p>怎样选择alpha？靠经验</p>
+<p>算法评估：<br>超平面的参数、权重向量各分量可能经历震荡，然后平稳。迭代次数相比原来较小。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/12/04/智能的边界/" style="float: left;">
+        ← 智能的边界
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/11/30/ML algorithm and practice(Basic)/">
+        Machine learning algorithm and practice(Basic) →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By ZIYUAN FENG. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/FengZiYjun" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
