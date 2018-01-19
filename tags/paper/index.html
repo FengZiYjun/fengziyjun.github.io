@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>智能的边界 | ZIYUAN FENG</title>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>Tag: paper | ZIYUAN FENG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -55,12 +55,12 @@
   
   
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <!--
-<body class="post-template">
--->
+<body class="home-template">
+<!-- hexo-inject:begin --><!-- hexo-inject:end -->-->
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -147,43 +147,69 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2017-12-04T15:06:21.582Z" itemprop="datePublished">
-          2017-12-04
-      </time>
-    
-</span>
-                <h1>智能的边界</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/cover.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>FENG ZIYUAN</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p></p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<p>用逻辑的观点看待世界本质就是一种建模的能力。<br>某些传统数学建模难以解决的问题，机器学习可以解决。<br>传统机器学习难以解决的问题，使用数据驱动的深度模型可以解决。<br>追溯人工智能的历史，视觉系统、语义理解、</p>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    
-    <a class="pull-right" href="/2017/11/30/ML algorithm and practice(Advanced)/">
-        Machine learning algorithm and practice(Advanced) →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo">
-
-
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2018/01/19/pdf/">Decomposability of Normal Distribution</a></h4>
+                            
+                            <p><time datetime="2018-01-19T07:36:06.558Z"><a href="/2018/01/19/pdf/">2018-01-19</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>Stay Hungry Stay Foolish.</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
@@ -256,22 +282,24 @@
         directionNav: true
       });
     });
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
 </script>
 
 <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
 </body>
 </html>
