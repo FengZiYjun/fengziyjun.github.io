@@ -38,7 +38,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: purple"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -54,12 +54,14 @@
 		<nav class="header-menu">
 			<ul>
 			
+				<li><a href="/aboutme/index.html">About Me</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">AboutMe</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">Nice Day</a>
     			
             
 		</nav>
@@ -81,7 +83,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: purple"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -97,6 +99,8 @@
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Stay hungry.<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 			
 			
@@ -116,6 +120,8 @@
 				<ul style="width: 50%">
 				
 				
+					<li style="width: 100%"><a href="/aboutme/index.html">About Me</a></li>
+		        
 				</ul>
 			</nav>
 		</header>				
@@ -330,7 +336,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: false,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -376,7 +382,7 @@ MathJax.Hub.Queue(function() {
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">AboutMe</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">Nice Day</a></li>
       
         
     </ul>
@@ -389,7 +395,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;br&gt;Stay hungry.&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Every day you live is a special occasion.</div>
   	  	
     	</section>
     
