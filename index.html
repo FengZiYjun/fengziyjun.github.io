@@ -61,8 +61,6 @@
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">Nice Day</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -137,6 +135,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/18/git-note/">git</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/18/git-note/" class="archive-article-date">
+  	<time datetime="2018-01-18T10:22:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-initial-configuration"><a href="#1-initial-configuration" class="headerlink" title="1. initial configuration"></a>1. initial configuration</h3><p><code>git config -global user.name &quot;?&quot;</code><br><code>git config -global user.email &quot;?&quot;</code><br>to check<br><code>cat ~/.gitconfig</code></p>
+        
+          <a class="article-more-a" href="/2018/01/18/git-note/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/18/git-note/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vps" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -160,30 +223,10 @@
         <p>VPS(Virtual Private Server) is generally a remote server which allows users to do a lot of things.</p>
 <ol>
 <li>Buy a server.<br>Several companies provide VPS at reasonable prices. I bought one from <em>Bandwagon</em>(Official website: <a href="https://bandwagonhost.com/" target="_blank" rel="noopener">https://bandwagonhost.com/</a>), which costs me nearly $3 per month.<br>After paying for the VPS, customers should recieve an <strong>IP address</strong>  which specifies the server they allocate for you, and an <strong>SSH port</strong> which is used to access the server. </li>
-<li>Obtain control.<br><em>Bandwagon</em> provides a control panel for the server, called KiwiVM. Login your <em>Bandwagon</em> account to enter it.<br>In KiwiVM, you can obtain a <strong>root password</strong> of the VPS.<br>KiwiVM has the full control of your server so it is important to set a KiwiVM password to protect it.<br>(Some companies tell you the root password together with the IP address in an email or something else. But Bandwagon does not do so for security reasons.)</li>
-<li>Initialization.<br>In KiwiVM, you can do a lot of initialization for your server. For example, start or shutdown the server, see disk or memory usage, install a new operating system, etc.</li>
 </ol>
-<ul>
-<li>I installed Ubuntu 16 on my server. </li>
-<li>The name of the server is the <strong>host name</strong>, which can be any name you like. </li>
-</ul>
-<ol>
-<li><p>SSH connection.<br>Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.<br>In this case, the <strong>host (machine)</strong> is the computer I am using. The operating system on the host is Windows.<br><em>PuTTy</em> is one of the softwares that helps you establish SSH connection. Download the compatible Windows version and install.<br>Open <em>PuTTy</em>. Fill in the IP address and Port. Choose SSH as the connection type. Then a black panel appears in which you enter the word “host” and the root password to login. After that you are successfully connected to the server.</p>
-</li>
-<li><p>Basic Security.<br>Immediately, you should change your root password the first time you access the server. Using the command<br><code>passwd</code><br>to change a new password that no one knows but you.<br>Generally it is insequre to work with the root account which has the full priledge of the system.<br>To create a new user of this server, type<br><code>adduser</code><br>to specify the name of the user and its password, both of which are required to login.<br>To create a new user with <code>sudo</code> previledge, type<br><code>visudo</code><br>and add the user name in the proper position of the shown file.</p>
-</li>
-<li><p>Build Shadowsocks.<br>Access the root account. Type<br><code>apt install shadowsocks</code><br>to install.<br>Enter this directory.<br><code>cd /etc/shadowsocks</code><br>Edit the configuration file.<br><code>vim config.json</code><br>Enter the IP address of the server and create a new password for shadowsocks.<br>To start the shadowsocks, type<br><code>nohup ssserver -c /etc/shadowsocks/config.json</code><br>Then in client end (Windows) you can establish the connection with shadowsocks of the Windows version by filling in the IP address and the purticular password.<br>Therefore the client can access blocked websites.</p>
-</li>
-<li>Transfer Files.</li>
-</ol>
-<ul>
-<li><p>From Windows client to Ubuntu server<br>Download <code>pscp.exe</code> from <em>Putty</em> offical website to your Windows. It is a tool for file transfer.<br>cd to where the <code>pscp.exe</code> is.<br><code>pscp file_path_on_client user_name@ip_address:path_of_server</code><br>This is the basic command to transfer files from local Windows to the remote server.<br>However, since we do not use the usual port for SSH, the server port needs to be specified by <code>-P 29818</code>.<br>So the command looks like this:<br><code>pscp -P 29818 file_path_on_client user_name@ip_address:path_of_server</code><br>Then the user password is required.</p>
-</li>
-<li><p>From Ubuntu server to Windows client<br>Similarily,<br><code>pscp -P 29818 user_name@ip_address:path_of_server file_path_on_client</code><br>The user password is required.</p>
-</li>
-</ul>
-<p>These operations are done in Windows command line. If you want to transfer files to Windows in Ubuntu command, a SSH server is needed for Windows.</p>
-
+        
+          <a class="article-more-a" href="/2017/11/20/vps/#more">more >></a>
+        
       
 
       
@@ -207,6 +250,413 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/20/vps/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vim-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/06/vim-note/">vim</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/06/vim-note/" class="archive-article-date">
+  	<time datetime="2017-10-06T10:21:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-changes-between-three-modes"><a href="#1-changes-between-three-modes" class="headerlink" title="1. changes between three modes"></a>1. changes between three modes</h3><p>i or a : ordinary mode –&gt; insertion mode<br>‘:’ ordinary mode –&gt; command line mode<br>Esc: other modes –&gt; ordinary mode</p>
+        
+          <a class="article-more-a" href="/2017/10/06/vim-note/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/06/vim-note/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-machine-learning-overview" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/06/machine-learning-overview/">An overview of Machine Learning (1)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/06/machine-learning-overview/" class="archive-article-date">
+  	<time datetime="2017-10-06T09:41:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article covers the following topics of machine learning basics.</p>
+<ul>
+<li>矢量编程基础</li>
+<li>机器学习相关数学知识</li>
+<li>机器学习应用：中文文本分类</li>
+<li>决策树</li>
+<li>推荐系统</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/10/06/machine-learning-overview/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/06/machine-learning-overview/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-re" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/26/re/">Regular Expression</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/26/re/" class="archive-article-date">
+  	<time datetime="2017-09-26T10:24:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="basic-token"><a href="#basic-token" class="headerlink" title="basic token"></a>basic token</h2><ul>
+<li>match any single character<br><code>.</code></li>
+<li>match a former character<ul>
+<li><code>{n}</code> exactly n times<br><code>{n,}</code> at least n times<br><code>{n,m}</code> at least n times, at most m times</li>
+<li><code>?</code>  0 or once  = {0,1}<br><code>*</code>  any times  = {0,}<br><code>+</code>  once or more = {1,}</li>
+</ul>
+</li>
+<li>use <code>\</code> to convert<br>For instance, <code>\*</code> matches a <code>*</code>.<br><code>(</code>, <code>-</code> need to be converted to match.</li>
+<li>use <code>?</code> after <code>+</code> or <code>*</code> to prevent greedness<br><code>.*</code> matches as much as possible<br><code>.*?</code> prevents this</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/09/26/re/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/26/re/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-advanced-python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/12/advanced-python/">Advanced Python</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/12/advanced-python/" class="archive-article-date">
+  	<time datetime="2017-06-12T10:23:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="元组类型可变长参数"><a href="#元组类型可变长参数" class="headerlink" title="元组类型可变长参数"></a>元组类型可变长参数</h3><p>在参数名前加<em><br>`def f(</em>list): pass<code>`f(1,2,3,4,5)</code></p>
+<h3 id="字典类型可变长参数"><a href="#字典类型可变长参数" class="headerlink" title="字典类型可变长参数"></a>字典类型可变长参数</h3><p>在参数名前加<strong><br>`def f(</strong>dict): pass<code>`f(x=1,y=2,z=3)</code></p>
+        
+          <a class="article-more-a" href="/2017/06/12/advanced-python/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/12/advanced-python/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-numpy-pandas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/21/numpy-pandas/">Data Manipulation with Pandas &amp; Numpy</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/21/numpy-pandas/" class="archive-article-date">
+  	<time datetime="2017-05-21T10:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Pandas-basic-application-of-Series-amp-DataFrame"><a href="#Pandas-basic-application-of-Series-amp-DataFrame" class="headerlink" title="Pandas: basic application of Series &amp; DataFrame"></a>Pandas: basic application of Series &amp; DataFrame</h2><h3 id="1-preparation"><a href="#1-preparation" class="headerlink" title="1. preparation"></a>1. preparation</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/05/21/numpy-pandas/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/21/numpy-pandas/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-machine-learning-overview2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/06/machine-learning-overview2/">An overview of Machine Learning (2)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/06/machine-learning-overview2/" class="archive-article-date">
+  	<time datetime="2017-03-06T10:05:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="六、梯度寻优"><a href="#六、梯度寻优" class="headerlink" title="六、梯度寻优"></a>六、梯度寻优</h2><h3 id="6-1-最优化与计算复杂性"><a href="#6-1-最优化与计算复杂性" class="headerlink" title="6.1 最优化与计算复杂性"></a>6.1 最优化与计算复杂性</h3>
+        
+          <a class="article-more-a" href="/2017/03/06/machine-learning-overview2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/06/machine-learning-overview2/">show all >></a>
         </p>
       
 
@@ -304,16 +754,12 @@ MathJax.Hub.Queue(function() {
     
     
       
-      
-      
     
     
 
     <ul style="width: 70%">
     
     
-      
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">Nice Day</a></li>
       
         
     </ul>
@@ -323,12 +769,6 @@ MathJax.Hub.Queue(function() {
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">Every day you live is a special occasion.</div>
-  	  	
-    	</section>
     
   </div>
   
