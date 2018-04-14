@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://fengziyjun.github.io">
-  <title>Archives: 2018 | ZIYUAN FENG</title>
+  <title>《数学之美》读书笔记 | ZIYUAN FENG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ZIYUAN FENG">
-<meta property="og:url" content="http://fengziyjun.github.io/archives/2018/index.html">
+  <meta name="description" content="语言和数学的产生都是为了同一个目的——记录和传播信息。 隐含马尔科夫模型信息传输路径：发送者—编码S—&amp;gt;信息—-解码O—&amp;gt;接受者根据观测信号o推测信号源发送的信息s，只需要找出最有可能的信息已知$o_1,o_2…$求条件概率$P(s_1,s_2,…|o_1,o_2…)达到最大值的s_1,s_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《数学之美》读书笔记">
+<meta property="og:url" content="http://fengziyjun.github.io/2018/04/02/Beauty-of-Math/index.html">
 <meta property="og:site_name" content="ZIYUAN FENG">
+<meta property="og:description" content="语言和数学的产生都是为了同一个目的——记录和传播信息。 隐含马尔科夫模型信息传输路径：发送者—编码S—&amp;gt;信息—-解码O—&amp;gt;接受者根据观测信号o推测信号源发送的信息s，只需要找出最有可能的信息已知$o_1,o_2…$求条件概率$P(s_1,s_2,…|o_1,o_2…)达到最大值的s_1,s_2,…$">
+<meta property="og:updated_time" content="2018-04-14T14:05:38.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZIYUAN FENG">
+<meta name="twitter:title" content="《数学之美》读书笔记">
+<meta name="twitter:description" content="语言和数学的产生都是为了同一个目的——记录和传播信息。 隐含马尔科夫模型信息传输路径：发送者—编码S—&amp;gt;信息—-解码O—&amp;gt;接受者根据观测信号o推测信号源发送的信息s，只需要找出最有可能的信息已知$o_1,o_2…$求条件概率$P(s_1,s_2,…|o_1,o_2…)达到最大值的s_1,s_2,…$">
   
     <link rel="alternative" href="/atom.xml" title="ZIYUAN FENG" type="application/atom+xml">
   
@@ -133,76 +137,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Beauty-of-Math" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      《数学之美》读书笔记
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/02/Beauty-of-Math/" class="archive-article-date">
+
+        
+        <a href="/2018/04/02/Beauty-of-Math/" class="archive-article-date">
   	<time datetime="2018-04-02T13:11:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/02/Beauty-of-Math/">《数学之美》读书笔记</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>语言和数学的产生都是为了同一个目的——记录和传播信息。</p>
+<h2 id="隐含马尔科夫模型"><a href="#隐含马尔科夫模型" class="headerlink" title="隐含马尔科夫模型"></a>隐含马尔科夫模型</h2><p>信息传输路径：发送者—编码S—&gt;信息—-解码O—&gt;接受者<br>根据观测信号o推测信号源发送的信息s，只需要找出最有可能的信息<br>已知$o_1,o_2…$求条件概率$P(s_1,s_2,…|o_1,o_2…)达到最大值的s_1,s_2,…$</p>
+<a id="more"></a>
+<p>利用贝叶斯公式，上述公式等价为<br>$${P(o_1,o_2…|s_1,s_2…)P(s_1,s_2…)\over P(o_1,o_2…)}$$<br>一旦信息产生，它就不会变了，所以$P(o_1,o_2…)$是一个可以忽略的常数<br>所以上式变为<br>$${P(o_1,o_2…|s_1,s_2…)P(s_1,s_2…)}$$<br>用Hidden Markov Model估计</p>
+<p>马尔科夫假设：随机过程中的每个状态$S<em>t$的概率分布，只与它的前一个状态$S</em>{t-1}$有关，即$$P(S_t|s_1,s<em>2…s</em>{t-1}) = P(s<em>t|s</em>{t-1})$$<br>符合该假设的过程称为马尔科夫过程，也称马尔科夫链<br>隐含马尔科夫链是马尔科夫链的一个扩展：任意时刻的状态$s_t$是不可见的。<br>所以没法通过观察状态序列推测转移概率。<br>独立输出假设：隐含马尔科夫模型每个时刻输出一个仅与当前状态有关的符号$o_t$</p>
+<p>基于马尔科夫假设和独立输出假设，有$$P(s_1,s_2..,o_1,o_2…)=\prod_t{P(s<em>t|s</em>{t-1})P(o_t|s_t)}$$<br>于是解码问题可以用隐含马尔科夫模型解决<br>$${P(o_1,o_2…|s_1,s_2…)P(s_1,s_2…)}\<br>=\prod_t{P(o_t|s_t)}P(s<em>t|s</em>{t-1})$$</p>
+<p>隐马尔科夫模型三个基本问题：</p>
+<ol>
+<li>给定一个模型，计算某个特定输出序列的概率；（forward-backward算法）</li>
+<li>给定一个模型盒某个输出序列，找到最有可能产生这个输出序列的状态序列；（维特比算法）</li>
+<li>给定足够量的数据，估计隐含马尔科夫模型的参数；</li>
+</ol>
+<p>参数：<br>转移概率Transition Probability $P(s<em>t|s</em>{t-1}) = {P(s_{t-1},s<em>t) \over P(s</em>{t-1})} $<br>生成概率 Generation Probability $P(o_t|s_t) = { P(0_t,s_t) \over P(s_t)}$</p>
+<p>用人工标注的数据估计状态输出概率——Supervised Training<br> $ P(o_t|s_t) = {经过状态s_t输出o_t的次数  \over 经过状态s_t的次数 } $<br>但是成本高</p>
+<p>无监督训练算法——鲍姆-韦尔奇算法 Baum-Welch Algorithm</p>
+<ol>
+<li>找到一组能够产生输出序列O的模型参数</li>
+<li>算出该模型产生输出出O的概率$P(O|M_{\theta0})$（问题1），找到产生O的所有可能的路径和路径的概率（问题2）——可以看成标记的训练数据。</li>
+<li>根据转移概率和生成概率的公式，算出一组新的模型参数$\theta<em>1$，可以证明$$P(O|M</em>{\theta1}) &gt; P(O|M_{\theta0})$$</li>
+<li>重复迭代下去，直到模型质量没有明显提升。</li>
+</ol>
+<p>属于<strong>期望最大化算法</strong>Expectation Maximization Algorithm<br>上帝的算法：训练数据 + 最大化函数<br>E过程：计算各个观测数据输入到模型中的结果或期望<br>M过程：每一次迭代估计新的模型参数，使得期望值最大化<br>EM 过程保证算法收敛到局部最优点，如果目标函数是凸函数就可以找到全局最佳值。<br>隐含马尔科夫模型的训练方法Baum-Welch算法，最大熵模型的训练方法GIS方法，文本自收敛分类法</p>
+<p>Baum-Welch算法中，E过程是根据当前模型计算状态转移次数和输出次数，M过程就是重新估计隐含马尔科夫模型的参数。</p>
+<p>参考文献：<br>《数学之美》第五章，第27章<br>Baum,L.E;Eagon,J.A.(1967) “An inequality with application to statistical estimation for probability functions of Markov process and to a model for ecology”<br>Baum,L,E;Petrie,T. 1966 Statistical inference for probabilitysic functions of finite state markov chains<br>Baum,L,E…. A maximization technique occurring in the statistical analysis of probabilistic functions of markov chains</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://fengziyjun.github.io/2018/04/02/Beauty-of-Math/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/18/git-note/" class="archive-article-date">
-  	<time datetime="2018-01-18T10:22:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/18/git-note/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/18/git-note/">git</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#隐含马尔科夫模型"><span class="toc-number">1.</span> <span class="toc-text">隐含马尔科夫模型</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,8 +324,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
