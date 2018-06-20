@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Notes for *Core Java*</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="dqj4" id="notes-for-core-java">Notes for <em>Core Java</em></h1><p data-anchor-id="02bx"><code>programming_language</code></p><hr><p data-anchor-id="p3zk">Author: Cay S. Horstmann <br>
+Volumn I - Fundamentals, Ninth Edition </p><p data-anchor-id="mtrb">before the notes:  <br>
+From C++ to Java there are a lot of details that need to be paid attention to. And this book explains them quite clearly. </p><div class="md-section-divider"></div><h2 data-anchor-id="8503" id="chapter-three-fundamental-programming-structures-in-java">Chapter Three: Fundamental programming structures in Java</h2><div class="md-section-divider"></div><h3 data-anchor-id="b5iz" id="data-type">Data type</h3><ul data-anchor-id="92pb">
+<li>Integer <br>
+<strong>byte</strong> 1 byte <br>
+<strong>short</strong> 2 bytes <br>
+<strong>int</strong> 4 bytes <br>
+<strong>long</strong> 8 bytes <br>
+Java has no "unsigned".</li>
+<li>Floating-Point <br>
+<strong>float</strong> 4 bytes <br>
+<strong>double</strong> 8 bytes <br>
+To check whether x is "Not a number":  <br>
+<code>Double.isNaN(x)</code></li>
+<li>Char <br>
+do not to use<code>char</code> unless there is actual need to manipulate UTF-16 code units. </li>
+<li>Boolean <br>
+You cannot convert between integer and boolean. </li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="55sa" id="variables">Variables</h3><p data-anchor-id="su3r">Variable names are case-sensitive.  <br>
+The length of variable names are unlimited.  <br>
+In Java, no declaration is seperated from definition.  <br>
+e.g. such things like <code>extern int i</code> will not happen in Java. </p><div class="md-section-divider"></div><h3 data-anchor-id="0ebe" id="constants">Constants</h3><p data-anchor-id="5j8e">use the key word <code>final</code> to denote a constant.  <br>
+use <code>static final</code> inside a class to denote a <strong>class constant</strong>.</p><div class="md-section-divider"></div><h3 data-anchor-id="udw5" id="operators">Operators</h3><p data-anchor-id="xxtc">+, -, *, /, += <br>
+++, -- <br>
+==, != <br>
+&amp;&amp;, || <br>
+? :  <br>
+bitwise operators: &amp; | ^ ~ <br>
+math functions and constants:  <br>
+<code>Math.sqrt(x)</code> <br>
+<code>Math.PI</code></p><div class="md-section-divider"></div><h3 data-anchor-id="739b" id="conversions-between-numeric-types">Conversions between numeric types</h3><ul data-anchor-id="dmuy">
+<li><p>without loss precision:  <br>
+byte---short---int---long/double <br>
+char---int</p></li>
+<li><p>with loss precision:  <br>
+int---float <br>
+long---double  <br>
+long---float</p></li>
+<li><p>When two values are combined with a binary operator, both operands need to be converted. </p>
+
+<ul><li>If one of the two operands is <code>double</code> or <code>float</code> or <code>long</code>, the other one will be converted into the same type. </li>
+<li>Otherwise, both will be converted into an <code>int</code>. </li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="aztp" id="casts">Casts</h3><p data-anchor-id="l638">the same as C++  <br>
+<code>int x = (int)9.9;</code> <br>
+Boolean type can not be cast into any numeric type.  <br>
+an alternative to conversion:  <code>b ? 1 : 0</code></p><div class="md-section-divider"></div><h3 data-anchor-id="pk4n" id="string">String</h3><ul data-anchor-id="xrfo">
+<li>definition <br>
+<code>String str = "hello";</code></li>
+<li><p>methods</p>
+
+<ul><li><code>String substring(int beginIndex, int endIndex)</code> get the range of [beginIndex, endIndex)  <br>
+<code>String substring(int beginIndex)</code></li>
+<li>Concatenation using <code>+</code> <br>
+When a string object is concatenated with a value that is not a string, it will be converted into a string, since every Java object can be converted into a string. </li>
+<li>Testing for equality: <code>str.equals(another_string)</code>  <br>
+Even <code>"hello".equals(str)</code> is valid.  <br>
+<code>str.equalsIgnoreCase()</code> <br>
+The == operator is only used to determine whether two strings are stored in the same location.  <br>
+To test whether a string is <code>null</code>, use <code>if(str==null)</code>. <br>
+<strong>Attention</strong>: <code>null</code> is different from empty string "" with the length of zero. </li>
+<li>The <code>str.length()</code> method yields the number of code units(char) required to make up the string object.  <br>
+To get the true length - the number of code pointers, use <code>str.codePointCount(0,str.lenth())</code></li>
+<li><code>int codePointAt(int index)</code> return the code point that starts or ends at certian location.  <br>
+<code>str.charAt(n)</code> return the code unit at position n which begin at 0, but it is too low-level. Do not use it. </li>
+<li><code>int offsetByCodePoints(int startIndex, int cpCount)</code> <br>
+returns the index of the code point away from the code point at startIndex.</li>
+<li><code>int str.compareTo(String other)</code> <br>
+returns a nagetive if <code>str</code> comes before <code>other</code> in dictionary order and a positive if <code>str</code> comes after <code>other</code>, or 0 when the two are equal.</li>
+<li><code>boolean endsWith(String suffix)</code> <br>
+<code>boolean startWith(String prefix)</code></li>
+<li><code>int indexOf(String str)</code> <br>
+<code>int indexOf(String str, int fromIndex)</code> <br>
+<code>int inedxOf(int cp)</code> <br>
+<code>int inedxOf(int cp, int fromIndex)</code> <br>
+returns the start of the last substring equal to the string str or the code point cp, starting at the end of the string or at fromIndex. </li>
+<li><code>Strin replace(String oldString, String newString)</code> <br>
+returns a new String by replacing all substring <code>oldString</code> with <code>newString</code>. </li>
+<li><code>String toLowerCase()</code> <br>
+<code>String toUpperCase()</code></li>
+<li><code>String trim()</code> eliminates all leading and trailing spaces </li></ul></li>
+<li><p>Building Strings  <br>
+use <code>StringBuilder</code> class</p></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="9o83" style=""><ol class="linenums"><li class="L0"><code><span class="typ">StringBuilder</span><span class="pln"> builder </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">StringBuilder</span><span class="pun">();</span></code></li><li class="L1"><code><span class="pln">builder</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="str">"abc"</span><span class="pun">);</span></code></li><li class="L2"><code><span class="typ">String</span><span class="pln"> str </span><span class="pun">=</span><span class="pln"> builder</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">();</span></code></li></ol></pre><ul data-anchor-id="7z0w">
+<li>A few things about Java String: <br>
+<ol><li>Strings are immutable <br>
+You cannot change a character in an existing string.  <br>
+An advantage of immutable strings: strings can be shared. </li>
+<li>Java String is analogous to a <code>char*</code> pointer rather than <code>char[]</code> in C programming and similar to <code>string</code> objects in C++ programming, whose memory management is performed by constructors, assignment operators and destructors. But C++ strings are mutable with every char inside modifiable.  <br>
+Java does automatic garbage collection. </li></ol></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="6t7x" id="input-output">Input &amp; Output</h3><ul data-anchor-id="hwgp">
+<li>Reading input  <br>
+<ol><li>construct a <code>scanner</code> that is attached to System.in <br>
+<code>Scanner in = new Scanner(System.in);</code></li>
+<li>To read a line, use nextline() method. <br>
+<code>String line = in.nextline()</code> <br>
+To read a word, use <code>next()</code> <br>
+To read a integer, use <code>nextIn()</code> <br>
+<code>nextDouble()</code> etc. <br>
+<code>boolean hasNext()</code> <br>
+<code>boolean hasNextInt()</code> </li></ol></li>
+</ul><p data-anchor-id="hnwz">To read a password, there is a little different. </p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="2hlx" style=""><ol class="linenums"><li class="L0"><code><span class="typ">Console</span><span class="pln"> cons </span><span class="pun">=</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="pln">console</span><span class="pun">();</span><span class="pln">  </span><span class="com">// a console object for interaction</span></code></li><li class="L1"><code><span class="typ">String</span><span class="pln"> name </span><span class="pun">=</span><span class="pln"> cons</span><span class="pun">.</span><span class="pln">readline</span><span class="pun">(</span><span class="str">"User name: "</span><span class="pun">);</span></code></li><li class="L2"><code><span class="kwd">char</span><span class="pun">[]</span><span class="pln"> password </span><span class="pun">=</span><span class="pln"> cons</span><span class="pun">.</span><span class="pln">readPassword</span><span class="pun">(</span><span class="str">"Password: "</span><span class="pun">);</span></code></li><li class="L3"><code><span class="com">// for security reason, returns an array rather than a string. </span></code></li></ol></pre><ul data-anchor-id="xxnp">
+<li><p>Formatting output <br>
+<code>System.out.print()</code> <br>
+Java SE 5.0 brings this from the C library:  <br>
+<code>System.out.printf("%d, %.5f", age, salary);</code> <br>
+Similar use in constructing a String:  <br>
+<code>String str = String.format("%d, %.5f", age, salary);</code></p>
+
+<ul><li>conversion characters <br>
+mostly the same as C <br>
+<code>printf("%tc", new Date());</code> There are many different formats to print a date. </li>
+<li>flags <br>
+<ol><li>The flag <code>$</code> is used to specify the index(start from 1, not 0) of the argument to be formatted.  <br>
+<code>printf("%2$d, %1$tc, %2$f", date, salary);</code>  <br>
+print the salary in decimal format and then in floating-point format. print the date in time format. </li>
+<li>The flag <code>&lt;</code> is used to indicate the same argument as the previous.  <br>
+<code>printf("%ty, %&lt;tm, %&lt;td", new Date());</code></li></ol></li></ul></li>
+<li><p>File Input &amp; Output</p>
+
+<ul><li><p><code>Scanner in = new Scanner(Paths.get("myfile.txt"));</code> <br>
+Do not directly put a String as Scanner's parameter. <br>
+The file should be located in the relative directory of where JVM starts. To see it, use <code>System.getProperty(user.dir)</code>. Otherwise, use an absolute directory like <code>C:\\User\\lenovo</code>.</p></li>
+<li><p><code>PrintWriter out = new PrintWriter("myfile.txt");</code> <br>
+If the file is not found, it will be created. </p></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="j5ny" id="control-flow">Control Flow</h3><p data-anchor-id="8jlu">Mostly they are identical to C++ or C, but there are slight differences.  <br>
+The same things: if, while, for, switch </p><ol data-anchor-id="whj5">
+<li>Java has no <code>goto</code>, but a labeled <code>break</code>.  <br>
+Put the label with a colon before the loop. After the break, the control flow will jump across the whole loop.</li>
+<li>Redefining a variable inside a nested block is not allowed. In C++, the inner one shadows the outer one. </li>
+</ol><div class="md-section-divider"></div><h3 data-anchor-id="hghn" id="big-numbers">Big Numbers</h3><p data-anchor-id="ijuc">in java.math package, use <code>BigInteger</code> and <code>BigDecimal</code>(floating-point). </p><ul data-anchor-id="k16m">
+<li>Methods:  <br>
+<code>static BigInteger valueOf(long x)</code> <br>
+<code>BigInteger add(BigInteger other)</code> the same as substract, multiply, divide, mod <br>
+<code>int compareTo(BigInteger other)</code> do the substract to get the result</li>
+</ul><p data-anchor-id="ydyl"><strong>Attention</strong>: Java does not allow programmable operator overloading. So you cannot use + or - to big numbers. </p><div class="md-section-divider"></div><h3 data-anchor-id="g8uc" id="arrays">Arrays</h3><p data-anchor-id="mfw8">An array is a date structure that stores a collection of values of the same type. You can access through index like <code>a[1]</code>. </p><ul data-anchor-id="s8ut">
+<li><p>definition  <br>
+<code>int[] a = new int[100];</code> <br>
+which is similar to <code>int* a</code> in C++ <br>
+<code>int a[]</code> is also valid but not recommended.</p></li>
+<li><p>initialization <br>
+When you created an array of numbers/boolean/objects, all elements are initialized with 0/false/null. <br>
+(null means it does not hold any object.) <br>
+Different ways of initialization:  <br>
+<code>int[] a = {1,2,3};</code> <br>
+<code>int[] a = new int[]{1,2,3};</code> <br>
+An array with the length of zero is OK, but it is not null.</p></li>
+<li><p>for-each loop <br>
+<code>for(type variable: collection) statement</code> <br>
+sets the given variable to each element of the collection and excecute the statement.  <br>
+The collection must be an array or objects of a class that implements the <code>Iterable</code> interface. </p></li>
+<li><p>String array in command-line parameters <br>
+<code>public static void main(String[] args)</code>  <br>
+receives an array of Strings specified in the command line.  <br>
+call the program with the following command:  <br>
+<code>java class_name -q one two</code> <br>
+Then <code>-q</code>, <code>one</code> and <code>two</code> are args[0], args[1] and args[2] respectively. </p></li>
+<li><p>Methods</p>
+
+<ul><li><code>toString()</code> returns a string like <code>"[1, 2, 3, 4]"</code></li>
+<li><code>Array.copyOf(type[], int length)</code> for deep copy <br>
+<code>Array.copyOf(type[], int start, int end)</code> <br>
+Simply assigning the name of the old array to the new one is the shallow copy.</li>
+<li><code>static void sort(type[] array)</code> <br>
+using QuickSort algorithm to sort</li>
+<li><code>static int binarySearch(type[] a, int start, int end, type v)</code> <br>
+using binary search for sorted arrays. If found, index is returned. Otherwise, a negative r is returned and -r-1 is where it should be inserted. </li>
+<li><code>static void fill(type[] a, type v)</code> <br>
+set all element of the array to v</li>
+<li><code>static boolean equals(type[] a, type[] b)</code> </li></ul></li>
+<li><p>Multidimensional Array <br>
+<code>double[][] a = new double[row][col];</code> <br>
+<code>double[][] b = {{1,2},{3,4}};</code> <br>
+access by two pairs of brackets [][]</p>
+
+<ul><li>using for-each: </li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="x72u" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">for</span><span class="pun">(</span><span class="kwd">double</span><span class="pun">[]</span><span class="pln"> row</span><span class="pun">:</span><span class="pln"> a</span><span class="pun">){</span></code></li><li class="L1"><code><span class="pln">    </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">double</span><span class="pln"> value</span><span class="pun">:</span><span class="pln"> row</span><span class="pun">)</span></code></li><li class="L2"><code><span class="pln">        </span><span class="pun">...</span></code></li><li class="L3"><code><span class="pun">}</span></code></li></ol></pre><ul data-anchor-id="9p07">
+<li>To print as a String, use <br>
+<code>Array.deepToString(b)</code> <br>
+and outputs something like <code>"[[1,2],[3,4]]"</code></li>
+<li>the same definition in C++ would be:  <br>
+<code>double** a = new double*[row];</code> <br>
+<code>for(int i=0;i&lt;row;i++)</code> <br>
+<code>a[i] = new double[col];</code></li>
+</ul><div class="md-section-divider"></div><h2 data-anchor-id="s8xn" id="chapter-four-objects-and-classes">Chapter Four: Objects and Classes</h2><div class="md-section-divider"></div><h3 data-anchor-id="7h91" id="oop">OOP</h3><p data-anchor-id="rnls">Niklaus Wirth, the designer of Pascal language said, </p><blockquote data-anchor-id="if1q" class="white-blockquote">
+  <p>Algorithm + Data structure = Programs </p>
+</blockquote><p data-anchor-id="jrwk">This is the traditional understanding of programming, algorithm first and then data structure. But in object-oriented programming, data comes first, and then look at the algorithms.</p><div class="md-section-divider"></div><h3 data-anchor-id="6ilb" id="classes">Classes</h3><div class="md-section-divider"></div><h4 data-anchor-id="mm6a" id="concepts">Concepts:</h4><ul data-anchor-id="uk0b">
+<li>class, object, instance, instance field, method, state</li>
+<li>encapsulation, inheritance</li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="lznw" id="objects">Objects</h4><p data-anchor-id="bz7c">Three things about an object: </p><ul data-anchor-id="c9by">
+<li>behavior: What can I do with the object? What are its methods? </li>
+<li>state: How it react when its methods invoked? </li>
+<li>identity: How to distinguish from others that have the same behavior and state? </li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="e77s" id="indentify-classes">indentify classes</h4><p data-anchor-id="j652">Nouns are class. Verbs are methods.  <br>
+More commonly, experience-based. </p><div class="md-section-divider"></div><h4 data-anchor-id="k90c" id="relationship-between-classes">relationship between classes</h4><ul data-anchor-id="vnsh">
+<li>dependency - "uses-a"</li>
+<li>aggregation - "has-a" </li>
+<li>inheritance - "is-a" </li>
+</ul><p data-anchor-id="9ary">UML notation</p><div class="md-section-divider"></div><h4 data-anchor-id="gpst" id="object-variable">Object Variable</h4><p data-anchor-id="u0a9">An object variable does not contain an object. It only refers to an object. </p><p data-anchor-id="nzpq">Java object variables are analogous to C++ object pointers.  <br>
+<code>Date birthday; // Java</code> <br>
+ is the same as  <br>
+<code>Date* birthday; // C++</code></p><p data-anchor-id="3e7y">accessor: get methods <br>
+mutator: set methods</p><div class="md-section-divider"></div><h3 data-anchor-id="s9vn" id="customer-defined-classes">Customer-defined Classes</h3><p data-anchor-id="5r2r">One source file has only one public class and any number of nonpublic class. The name of the source file must match that of the public class.  <br>
+The compiler will create <code>.class</code> file for each class. </p><p data-anchor-id="odhr">Recommendation: make all instance field private, except for public final fields. </p><div class="md-section-divider"></div><h3 data-anchor-id="5rh0" id="constructors">Constructors</h3><p data-anchor-id="xdtz">A constructor </p><ul data-anchor-id="7yfg">
+<li>has the same name as the class</li>
+<li>can take any number of parameters</li>
+<li>has no return value</li>
+<li>is always called with <code>new</code> operator</li>
+<li>A class can have more than one constructors.</li>
+</ul><p data-anchor-id="mx7k">One of the common error for C++ programmer to code in Java is forgetting the <code>new</code> when creating an object. </p><p data-anchor-id="uvq7">Be careful not to introduce local variables inside constructors with the same name as instance fields. </p><div class="md-section-divider"></div><h3 data-anchor-id="rvr5" id="implicit-and-explicit-parameters">Implicit and explicit parameters</h3><p data-anchor-id="mkbe">Explicit parameters are explicitly listed in the declearation of the method, while the implicit one is the object of type that appears before the method name.  <br>
+The key word <code>this</code>can be used to refer to the implicit parameter.</p><p data-anchor-id="hg0v">Unlike C++, all methods of Java classes are defined inside the class. JVM decides which method is inline. </p><div class="md-section-divider"></div><h3 data-anchor-id="bh6m" id="encapulation">Encapulation</h3><p data-anchor-id="hjne">To get and set the value of an instance field, we need</p><ul data-anchor-id="p3ib">
+<li>a private data field</li>
+<li>a public field accessor method </li>
+<li>a public field mutator method</li>
+</ul><p data-anchor-id="9o33">If an accessor wants to return references to mutable objects, it should be cloned first by <code>.clone()</code> method. Otherwise encapsulation will be breaken. </p><p data-anchor-id="6i9q">Access privileges are class-based, not instance-based.  <br>
+Therefore, a method can access the private data of all objects of this class. </p><div class="md-section-divider"></div><h3 data-anchor-id="3one" id="final">Final</h3><p data-anchor-id="aa68">Final instance fields must be initialized when the object is constructed. Having set the final field value must be guaranteed after the end of every constructor. </p><p data-anchor-id="nnbh">If an object variable is declared as final, it does not mean that the object itself is constant but the object reference that stored in the variable does not change after construction. </p><div class="md-section-divider"></div><h3 data-anchor-id="s5jp" id="static">Static</h3><p data-anchor-id="7fzq">If a field is defined <code>static</code>, then there is only one such field per class.  <br>
+Static variables are rare. Static constants are more common.  <br>
+And public constants are OK because no one can modify.  <br>
+<code>public static final</code></p><p data-anchor-id="f5m9">Static methods are used in two situations: </p><ul data-anchor-id="4kzh">
+<li>no need to access object state and all parameters are explicit.</li>
+<li>only need to access the static field of a class</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="u33a" id="main">main</h3><p data-anchor-id="q7nm">The main method does not operate on any object. Every class can have a main method. It is a handy trick for unit testing. </p><div class="md-section-divider"></div><h3 data-anchor-id="9e7l" id="method-parameters">Method parameters</h3><p data-anchor-id="h9tv">Java always uses <strong>call by value</strong>. <br>
+Methods get a copy of all parameter values passed to it and cannot modify the contents of any parameter variables. </p><p data-anchor-id="f70l">A method</p><ul data-anchor-id="iexe">
+<li>cannot modify a parameter of a primitive type(numbericc or boolean).</li>
+<li>cannot make an object parameter refer to a new object</li>
+<li>can change the state of an object parameter</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="jhpg" id="object-construction">Object Construction</h3><p data-anchor-id="8g79">Constructors can be overloaded. <br>
+Default field initialization. <br>
+There is a free no-argument constructor only when my class has no other constructors.</p><ul data-anchor-id="idey">
+<li><p>explicit field initilization  <br>
+simply assign a value in the class definition <br>
+This assignment will be carried out <strong>before the constructor</strong>. </p></li>
+<li><p>construtor calls constructor <br>
+If the first statement of a constructor has the form of <code>this()</code>, it calls another constructor of the same class.  <br>
+It never happends in C++.</p></li>
+<li><p>initializatino blocks <br>
+set assingment statements of fields inside a block <br>
+denote <code>static</code> before the block if initialization is complex.  <br>
+not common</p></li>
+<li><p>order of initialization </p>
+
+<ol><li>All data fields are initialized to default values.</li>
+<li>Explicit field initializers and initialization blocks are excecuted in declaration order. </li>
+<li>A constructor is executed. </li></ol></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="b3oq" id="destruction">Destruction</h3><p data-anchor-id="iqws">Java does automatic garbage collection.  <br>
+A <code>finalize</code> method will be called before it. But do not rely on it for resource recycling.  <br>
+Instead, supply a <code>close</code> method that does the cleanup. </p><div class="md-section-divider"></div><h3 data-anchor-id="b0sf" id="package">Package</h3><p data-anchor-id="96m6">A package is a collection of classes.  <br>
+The standard Java package is inside the java and javax package hierachies.  <br>
+The main reason for using package is to guarantee the uniqueness of class names. Classes in different packages can have the same name. <br>
+To guarantee the uniqueness of package name, use your domain name in reverse.  <br>
+There is no relationship between nested packages. </p><div class="md-section-divider"></div><h3 data-anchor-id="s8hz" id="importation">Importation</h3><p data-anchor-id="uv81">A class can use all classes from its own package and all public classes from other package.  <br>
+To access classes from other packages, use its full name or use <code>import</code> for short. </p><p data-anchor-id="0url">The package and import in Java is analogous to the namespace and using in C++, rather than #include. </p><div class="md-section-divider"></div><h4 data-anchor-id="5c3r" id="static-import">Static import</h4><p data-anchor-id="ayzg"><code>import static</code> + package_name <br>
+To use the static methods andd fields of the class without prefix</p><div class="md-section-divider"></div><h4 data-anchor-id="lm4g" id="addition-of-a-class-into-a-package">Addition of a class into a package</h4><p data-anchor-id="1fjz">put the package statement at the top of the source file <br>
+<code>package com.mycompany.corejave;</code> <br>
+Otherwise, it will be in the default package. </p><p data-anchor-id="iwhy">To complile in the command line:  <br>
+<code>javac com/mycompany/corejave/wedget.java</code> <br>
+<code>java com.mycompany.corejave.wedget</code> <br>
+The compiler looks for files, while the interpreter looks for classes, which accounts for the differ of their paths.</p><p data-anchor-id="aqm1">If the feature(class, method, variable) does not have public or private modifier, it is package-visible. Classes from the same package can access it. This will break encapsulation. </p><p data-anchor-id="1j1i">package sealing: no further classes can be added. (Chapter 10)</p><div class="md-section-divider"></div><h3 data-anchor-id="m468" id="class-path">class path</h3><p data-anchor-id="v1xx">Class files can be stored in a JAR(Java Archive) file which contains multiple class files adn subdirectories in a compressed ZIP format. </p><p data-anchor-id="cvca">To share classes among programmers,  <br>
+1. Place class files inside a directory.  <br>
+2. Place any JAR files inside another directory.  <br>
+3. Set the <em>class path</em> - The base directory, the JAR file and the current directory (.)</p><p data-anchor-id="mp48">The compiler always looks for files in the current directory. But JVM only looks into the current directory if the "." is on the class path.</p><p data-anchor-id="1uq3">ways for setting the class path:  <br>
+1. using command <code>java -classpath</code> + the three paths <br>
+2. set CLASSPATH environment variable in different shells <br>
+Do not set CLASSPATH permanently!</p><div class="md-section-divider"></div><h3 data-anchor-id="w7am" id="documentation-comments">Documentation Comments</h3><p data-anchor-id="cefb"><code>javadoc</code> is a tool in JDK that generates HTML documentation from source files. </p><div class="md-section-divider"></div><h4 data-anchor-id="ob9h" id="insertion">Insertion</h4><p data-anchor-id="gzvt"><code>javadoc</code> looks for </p><ul data-anchor-id="q2rm">
+<li>Packages </li>
+<li>Public classes and interfaces </li>
+<li>Pubic and protected fields.</li>
+<li>Public and protected constructors and methods </li>
+</ul><p data-anchor-id="an0r">The comment is placed above the feature it described. <br>
+Start with <code>/**</code>, end with <code>*/</code> <br>
+Tags start with <code>@</code> <br>
+You can use HTML modifiers. </p><ol data-anchor-id="cslb">
+<li><p>Class Comments <br>
+must be placed after any import statements, before the class definition. </p></li>
+<li><p>Method Comments </p>
+
+<ul><li><code>@param</code> variable_name discription</li>
+<li><code>@return</code> description</li>
+<li><code>@throws</code> class description</li></ul></li>
+<li><p>Field Comments  <br>
+Only need to document public field - static constants. </p></li>
+<li><p>General Comments </p>
+
+<ul><li><code>@author</code> name</li>
+<li><code>@version</code> text </li>
+<li><code>@see</code> reference</li></ul></li>
+<li><p>Package Comments <br>
+supply an HTML file named <code>package.html</code> and all text in its body will be extracted. </p></li>
+</ol><p data-anchor-id="t1rp">To generate documentation, run  <br>
+<code>javadoc -d</code> docDirectory nameOfPackage1 nameOfPackage2 ...</p><div class="md-section-divider"></div><h3 data-anchor-id="psvc" id="class-design-hints">Class Design Hints</h3><ul data-anchor-id="746i">
+<li>Always keep data private. </li>
+<li>Always initialize data. </li>
+<li>Do not use too many basic types in a class. (group them into a new class)</li>
+<li>Not all fields need individual field accessors and mutators. </li>
+<li>Break up classes that have too many responsibilities.</li>
+<li>Make the names of your classes and methods reflect their responsibilities. </li>
+</ul><div class="md-section-divider"></div><h2 data-anchor-id="7qsd" id="chapter-5-inheritance">Chapter 5: Inheritance</h2><div class="md-section-divider"></div><h3 data-anchor-id="g0ys" id="superclasses-and-subclasses">Superclasses and subclasses</h3><ul data-anchor-id="3tv7">
+<li><p>using the key word <code>extends</code> to inherite:  <br>
+<code>class SubClass extends SuperClass{ ... }</code> <br>
+All inhetitance in Java is public inheritance.  <br>
+Subclass has no direct access to the private field of the superclass. </p></li>
+<li><p>A subclass can define method that overrides the same one in the superclass.  <br>
+To call the superclass method from the subclass, use <code>super.</code>method_name()</p></li>
+<li><p>To call the superclass constructor from the subclass constructor: <code>super(</code><em>parameter list</em> <code>);</code></p></li>
+</ul><p data-anchor-id="ercp">In C++, we use <code>class derived: public base{ ... }</code> to inheritate, <code>base::method()</code> to call base methods, <code>Derived(init_list): Base(init_list){ ... }</code> to construct the part of the superclass.</p><p data-anchor-id="1kpj"><strong>Polymorphism</strong>: An object variable can refer to multiple actual types. <br>
+<strong>Dynamic binding</strong>: Automatically select the appropriate method at runtime. </p><p data-anchor-id="3lzo">Dynamic binding is default in Java. You don't have to declare <code>virtual</code> as C++. </p><p data-anchor-id="inni">Java does not support multiple inheritance. Use interface instead. </p><p data-anchor-id="655e">Overriding can change the return type of a method to a subtype of the orinal one. </p><p data-anchor-id="rq79">The subclass method that overrides that of the superclass must be declared as public as well. </p><ul data-anchor-id="xoq8">
+<li>using <code>final</code> to ban inheritance <br>
+A <code>final</code> method cannot be overrided.  <br>
+A <code>final</code> class cannot be extended. All methods in the class are final, but not the fields. </li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="8i2o" id="casting">Casting</h3><ul data-anchor-id="wapv">
+<li>Casting is only available within the inheritance hierarchy. </li>
+<li><code>instance of</code> is used to check before casting from superclass to subclass. </li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="g0fo" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">if</span><span class="pun">(</span><span class="pln">x instance of </span><span class="typ">SubClass</span><span class="pun">){</span><span class="pln"> </span><span class="com">// false if x is null</span></code></li><li class="L1"><code><span class="pln">    </span><span class="typ">SubClass</span><span class="pln"> </span><span class="kwd">sub</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">SubClass</span><span class="pun">)</span><span class="pln">x</span><span class="pun">;</span></code></li><li class="L2"><code><span class="pun">}</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="com">// in c++</span></code></li><li class="L5"><code><span class="typ">SubClass</span><span class="pun">*</span><span class="pln"> </span><span class="kwd">sub</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">dynamic_cast</span><span class="pun">&lt;</span><span class="typ">SubClass</span><span class="pun">*&gt;(</span><span class="pln">x</span><span class="pun">);</span></code></li><li class="L6"><code><span class="kwd">if</span><span class="pun">(</span><span class="kwd">sub</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> NULL</span><span class="pun">){</span></code></li></ol></pre><div class="md-section-divider"></div><h3 data-anchor-id="l5jl" id="abstract-classes">Abstract Classes</h3><ul data-anchor-id="00de">
+<li>A class with at least one abstract method must be defined as an abstract class itself. </li>
+<li>But abstract classes can have common methods and fields as well.</li>
+<li>Abstract methods give place to subclasses to implement them. </li>
+<li>A class can be defined as  abstract even though it has no abstract methods. (?)</li>
+<li>An abstract class cannot be instantiated. </li>
+</ul><p data-anchor-id="993n">When a abstract class is extended, there are two choices: </p><ul data-anchor-id="aw5n">
+<li>leave at least one abstract method undefined, and the subclass is abstract as well. </li>
+<li>implement all abstract methods in the superclass. </li>
+</ul><p data-anchor-id="w5ft">In C++, a class is abstract if it has at least one pure virtual function such as  <code>virtual void f() = 0;</code></p><div class="md-section-divider"></div><h3 data-anchor-id="bt7t" id="protected-access">Protected Access</h3><p data-anchor-id="z0gn">use with caution in fields <br>
+make more sense to methods</p><p data-anchor-id="k1f3">protected in Java is less safe than in C++, because  <br>
+other classes in the same package can access it. </p><div class="md-section-divider"></div><h3 data-anchor-id="qgv0" id="summary-of-accessibility">Summary of accessibility</h3><ol data-anchor-id="b91y">
+<li><code>private</code> visible to the class only</li>
+<li><code>public</code> visible to the world</li>
+<li><code>protected</code> visible to the package and all subclasses</li>
+<li>(default) visible to the package</li>
+</ol><div class="md-section-divider"></div><h3 data-anchor-id="nezd" id="the-cosmic-superclass-object">The Cosmic Superclass: Object</h3><p data-anchor-id="piry">Every class in Java extends Object. <br>
+In Java, only premitive types (numbers, characters and boolean) are not objects. </p><div class="md-section-divider"></div><h4 data-anchor-id="iv5z" id="equality-testing">Equality Testing</h4><p data-anchor-id="xsxx">testing equality between a subclass and a superclass <br>
+two senarios: </p><ul data-anchor-id="6zo4">
+<li>If a subclass can have its own notion of equality, the symmetry rules forced you to use <code>getClass</code> test - <code>x.equals(y)</code> returns true if and only if <code>y.equals(x)</code> returns true. </li>
+<li>If the notion of equality is fixed in the superclass, use the <code>instanceof</code> test and allow objects of different subclasses to be equal to one another. </li>
+</ul><p data-anchor-id="tkup">The recipe for <code>equals</code> method: </p><ol data-anchor-id="qp1u">
+<li>the explicit parameter for the method is <code>Object otherObject</code>. <br>
+And this will override the one of the Object class.</li>
+<li>Test whether <code>this</code> happens to be identical to otherObject.</li>
+<li>Test whether otherObject is null.</li>
+<li>Compare the class of <code>this</code> and otherObject. <br>
+If the sematics of <code>equals</code> can change in subclasses, use the <code>getClass</code> test. <br>
+If the same sematics holds for all subclasses, use the <code>instanceof</code> test. </li>
+<li>Cast otherObject to a variable of your class type.</li>
+<li>Compare the fields. Use == for primitive types and <code>Object.equals</code> for objects. </li>
+<li>If you redefine <code>equals</code> in a subclass, include a call to <code>super.equals</code></li>
+</ol><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="vpm8" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> equals</span><span class="pun">(</span><span class="typ">Object</span><span class="pln"> otherObject</span><span class="pun">){</span></code></li><li class="L1"><code><span class="pln">    </span><span class="com">// 2. </span></code></li><li class="L2"><code><span class="pln">    </span><span class="kwd">if</span><span class="pun">(</span><span class="kwd">this</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> otherObject</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span></code></li><li class="L3"><code><span class="pln">    </span><span class="com">// 3. </span></code></li><li class="L4"><code><span class="pln">    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">otherObject </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span></code></li><li class="L5"><code><span class="pln">    </span><span class="com">// 4. </span></code></li><li class="L6"><code><span class="pln">    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">getClass</span><span class="pun">()</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> otherObject</span><span class="pun">.</span><span class="pln">getClass</span><span class="pun">())</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span></code></li><li class="L7"><code><span class="pln">    </span><span class="com">// or</span></code></li><li class="L8"><code><span class="pln">    </span><span class="kwd">if</span><span class="pun">(!(</span><span class="pln">otherObject </span><span class="kwd">instanceof</span><span class="pln"> </span><span class="typ">ClassName</span><span class="pun">))</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span></code></li><li class="L9"><code><span class="pln">    </span><span class="com">// 5.</span></code></li><li class="L0"><code><span class="pln">    </span><span class="typ">ClassName</span><span class="pln"> other </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">ClassName</span><span class="pun">)</span><span class="pln">otherObject</span><span class="pun">;</span></code></li><li class="L1"><code><span class="pln">    </span><span class="com">// 6. </span></code></li><li class="L2"><code><span class="pln">    </span><span class="kwd">return</span><span class="pln"> field1 </span><span class="pun">==</span><span class="pln"> other</span><span class="pun">.</span><span class="pln">field1</span></code></li><li class="L3"><code><span class="pln">        </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="typ">Object</span><span class="pun">.</span><span class="pln">equals</span><span class="pun">(</span><span class="pln">field2</span><span class="pun">,</span><span class="pln"> other</span><span class="pun">.</span><span class="pln">field2</span><span class="pun">)</span></code></li><li class="L4"><code><span class="pln">        </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="pun">...;</span></code></li><li class="L5"><code><span class="pun">}</span></code></li></ol></pre><div class="md-section-divider"></div><h4 data-anchor-id="nlt0" id="the-hashcode-method">The <em>hashcode</em> method</h4><p data-anchor-id="n5sk">The <em>hashcode</em> method is defined in the Object class. </p><ul data-anchor-id="1idj">
+<li>For String class, the hash code is derived from their contents. Therefore two string variables with the same contents will have the same hash code. </li>
+<li>For other classes, the hash code is derived from the memory address. </li>
+</ul><p data-anchor-id="x5p0">If <em>equals</em> method is redefined, <em>hashcode</em> method needs to be redefined as well. And they must be compatible.  <br>
+If two variables are equals under the <em>equals</em> method, they must have the same value of hash code. </p><p data-anchor-id="ozkt">Some relative methods:  <br>
+<code>int Object.hashcode()</code> returns the hash code for this object (returns 0 for null).  <br>
+<code>int Object.hash(Object...Object)</code> returns a combined hash code. <br>
+<code>itn Array.hashcode(type[] a)</code> computes the hash code of array a with different components.</p><div class="md-section-divider"></div><h4 data-anchor-id="xd3c" id="the-tostring-method">The <em>toString</em> method</h4><p data-anchor-id="mf41">A common format for <em>toString</em> method:  <br>
+<code>getClass().getName()</code> followed by field values in square brackets. For derived classes, add square brackets after. </p><p data-anchor-id="u8dl">The <em>toString</em> method is invoked automatically when contatenating a string with an object by "+" operator ,or printing an object by <code>System.out.println()</code>.</p><p data-anchor-id="07n1">Specifically, to print an array, use <code>Array.toString(a)</code> instead.  <br>
+For a multimensional array, use <code>Array.deepToString(a)</code></p><p data-anchor-id="bctw">Adding a <em>toString</em> to a user-defined class is strongly recommended. </p><div class="md-section-divider"></div><h3 data-anchor-id="hnho" id="generic-array-list">Generic Array List</h3><p data-anchor-id="l8n7">ArrayList is a <strong>generic</strong> class with a type parameter in angle brackets.  <br>
+ArrayList is similar to the C++ vector template. </p><ul data-anchor-id="7k7n">
+<li><p>construction <br>
+<code>ArrayList&lt;Type&gt; al = new ArrayList&lt;Type&gt;();</code> <br>
+In Java 7, "diamond syntax" can omit the type parameter on the right. <br>
+<code>ArrayList&lt;Type&gt; al = new ArrayList&lt;&gt;();</code> <br>
+Or with initialized capacity: <br>
+<code>ArrayList&lt;Type&gt; al = new ArrayList&lt;&gt;(100);</code></p></li>
+<li><p>operations <br>
+<code>boolean add(Type obj)</code> append, always return true. <br>
+<code>int size()</code>  <br>
+<code>void ensureCapacity(int capacity);</code> allocate an array with desired storage capacity</p></li>
+<li><p>accessing elements <br>
+No [] syntax can be used.  <br>
+<code>Type get(int index)</code> <br>
+<code>void set(int index, Type obj)</code> <br>
+<code>Type remove(int index)</code> shifts down all element above and returns the removed element</p></li>
+<li><p>warning  <br>
+ArrayList has a "raw" version which takes no type paramters.  <br>
+The "raw" one cannot be assigned or cast into a typed one. <br>
+The compliler would not check if you pass a typed ArrayList into a "raw" ArrayList and this is dangerous. </p></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="4p5r" id="object-wrappers-and-autoboxing">Object Wrappers and Autoboxing</h3><p data-anchor-id="ree5">All primitive types have class counterparts.  <br>
+They are called <em>wrappers</em>： <br>
+Integer, Long, Float, Double, Short, Byte, Character, Void, Boolean <br>
+<em>Wrapper</em> classes are <strong>immutable</strong> and <strong>final</strong>.  <br>
+A typical usage is to construct an ArrayList of integer.  <br>
+Angle brackets do not recieve primitive types.  <br>
+use <code>ArrayList&lt;Interger&gt; list = new ArrayList&lt;&gt;()</code> instead. </p><p data-anchor-id="6se1">Autoboxing <br>
+<code>list.add(3)</code> does autoboxing to be <code>list.add(Integer.valueOf(3))</code> <br>
+In most cases, the primitive types and their wrappers are likely to be the same except for their identity.  <br>
+Wrappers are a convenient place to put some basic methods.  <br>
+The word "boxing" is taken from C#. </p><p data-anchor-id="2obk"><code>int Integer.intValue()</code> return as an int <br>
+<code>static String Integer.toString()</code> <br>
+<code>static int Integer.parseInt(String s, int radix)</code> returns the integer contained in a string. The integer should be in the given base or default 10 base.  <br>
+<code>static Integer Integer.valueOf(String s, int radix)</code> similar</p><div class="md-section-divider"></div><h3 data-anchor-id="e9hz" id="varargs-methods-methods-with-a-variable-number-of-parameters">Varargs Methods: methods with a variable number of parameters</h3><p data-anchor-id="lviy"><code>public void f(int... list){ }</code> <br>
+The ellipsis "..." is part of the code, which denotes the method receives an arbitary number of objects, and is exactly the same as <code>Object[]</code>. So <code>for(int x: list)</code> can be used for iteration. </p><p data-anchor-id="9os5">To call the method, use <code>f(1,2,3);</code>.</p><div class="md-section-divider"></div><h3 data-anchor-id="2j5k" id="enumeration-classes">Enumeration classes</h3><p data-anchor-id="g1b9">Enumeration is actually a class with a fixed number of instances.  <br>
+<code>public enum MyEnum{SMALL, MEDIAN, LARGE };</code></p><div class="md-section-divider"></div><h3 data-anchor-id="535c" id="reflection">Reflection</h3><p data-anchor-id="plh7">The Reflection Library provides tools for manipulating Java codes dynamically. A program that can analyze the capabilities of classes is called <em>reflective</em>.  <br>
+It is a powerful and complex mechanism.  <br>
+However, it is useful in system programming or toolkit design, not in applications.</p><div class="md-section-divider"></div><h4 data-anchor-id="xea2" id="the-class-class">The <em>class</em> class</h4><p data-anchor-id="27qt">The Java runtime system maintains <em>runtime type identification</em> on all objects, which keeps track on the class which each object belongs to.</p><ul data-anchor-id="d5q2">
+<li>Get the class infomation from an instance  <br>
+<code>class cl = x.getClass();</code></li>
+<li><code>getName()</code> method is commonly used, but it works strange for array types (historical reason).</li>
+<li><p>To obtain a class object by its name  <br>
+<code>Class cl = Class.forName("java.util.Date");</code> <br>
+Or simply <br>
+<code>Class cl = Date.class;</code></p></li>
+<li><p>You can use "==" to compare class objects. </p></li>
+<li>To create a new instance of the class, use <code>x.getClass().newInstance();</code>, which non-parameter constructor will be invoked. (cannot pass any parameters)</li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="syom" id="a-primer-on-catching-exceptions">A primer on Catching Exceptions</h4><ul data-anchor-id="lhn9">
+<li>Checked Exception: The compiler checks whether you provide a handler </li>
+<li>Unchecked Exception: Programmers should avoid these mistakes rather than coding handlers.</li>
+</ul><p data-anchor-id="hzoi">Using "try-catch" statement to catch exceptions. <br>
+The compiler will tell you which method need to supply a handler. </p><div class="md-section-divider"></div><h4 data-anchor-id="wwib" id="using-refection">Using refection</h4><p data-anchor-id="osha">The three classes <code>Field</code>, <code>Method</code>, <code>Constructor</code> in Java.lang.reflect package describe three aspects of the class respectively.  <br>
+<code>getName</code> returns a name <br>
+<code>getModifier</code> returns an integer <br>
+<code>Modifier.isPublic/isPrivate/...</code> analyze the integer, return boolean <br>
+<code>Field.getType</code> <br>
+<code>getFields</code>, <code>getMethods</code>, <code>getConstructors</code> return arrays of the <em>public</em> fields, methods and constructors.  <br>
+<code>getDeclaredFields</code>, <code>getDeclaredMethods</code>, <code>getDeclaredConstructors</code> return all, not just public ones.</p><div class="md-section-divider"></div><h4 data-anchor-id="b9pb" id="using-reflecton-for-analyzing-objects-at-runtime">Using Reflecton for analyzing objects at runtime</h4><p data-anchor-id="7y6y">access field information by the <code>get</code> method of the <code>Field</code> class</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="8y6s" style=""><ol class="linenums"><li class="L0"><code><span class="typ">MyClass</span><span class="pln"> mc </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pun">();</span></code></li><li class="L1"><code><span class="typ">Class</span><span class="pln"> cl </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> mc</span><span class="pun">.</span><span class="pln">getClass</span><span class="pun">();</span></code></li><li class="L2"><code><span class="typ">Field</span><span class="pln"> f </span><span class="pun">=</span><span class="pln"> cl</span><span class="pun">.</span><span class="pln">getDeclaredField</span><span class="pun">(</span><span class="str">"field_name"</span><span class="pun">);</span></code></li><li class="L3"><code><span class="typ">Object</span><span class="pln"> obj </span><span class="pun">=</span><span class="pln"> f</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="pln">mc</span><span class="pun">);</span></code></li><li class="L4"><code><span class="com">// returns an object whose value is the current value of the field of mc</span></code></li></ol></pre><p data-anchor-id="4ux9">This method can only be used to access accessible fields. If the field is private, you can change its accessibility by <code>setAccessible</code> method on a <code>Field</code>, <code>Method</code>, <code>Constructor</code> object.  <br>
+<code>f.setAccessible(true);</code></p><p data-anchor-id="zqwq">As for number objects, <code>get()</code> does autoboxing. </p><p data-anchor-id="9e17">Also, we can set value by <code>set</code> method  <br>
+<code>void Field.set(Object obj, Object newValue);</code></p><blockquote data-anchor-id="cojw" class="white-blockquote">
+  <p>customize your own generic toString method used for all objects</p>
+</blockquote><div class="md-section-divider"></div><h4 data-anchor-id="6rdm" id="using-reflectio-to-write-generic-array-code">Using reflectio to write Generic Array Code</h4><p data-anchor-id="lfgm">Consider we are coding the implementation of the <code>copyOf</code> method of a geneic array that holds elements of any type. <br>
+Any object can be converted into <code>Object</code> class, but it would not help because an array of elements of <code>Object</code> class would not be cast back into the same type of array after the memory reallocation.  <br>
+Therefore we would not cast an instance of <code>MyClass[]</code> into <code>Object[]</code> class. Rather, we treat the instance of <code>MyClass[]</code> as an Object and create a new array using <code>reflect.Array.newInstance()</code> based on this Object.</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="q9kp" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">Object</span><span class="pln"> copyOf</span><span class="pun">(</span><span class="typ">Object</span><span class="pln"> obj</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> newLength</span><span class="pun">){</span></code></li><li class="L1"><code><span class="pln">    </span><span class="typ">Class</span><span class="pln"> cl </span><span class="pun">=</span><span class="pln"> obj</span><span class="pun">.</span><span class="pln">getClass</span><span class="pun">();</span></code></li><li class="L2"><code><span class="pln">    </span><span class="kwd">if</span><span class="pun">(!</span><span class="pln">cl</span><span class="pun">.</span><span class="pln">isArray</span><span class="pun">())</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></code></li><li class="L3"><code><span class="pln">    </span><span class="typ">Class</span><span class="pln"> componentType </span><span class="pun">=</span><span class="pln"> cl</span><span class="pun">.</span><span class="pln">getComponentType</span><span class="pun">();</span></code></li><li class="L4"><code><span class="pln">    </span><span class="kwd">int</span><span class="pln"> length </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Array</span><span class="pun">.</span><span class="pln">getLength</span><span class="pun">(</span><span class="pln">cl</span><span class="pun">);</span></code></li><li class="L5"><code><span class="pln">    </span><span class="typ">Object</span><span class="pln"> newArray </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Array</span><span class="pun">.</span><span class="pln">newInstance</span><span class="pun">(</span><span class="pln">componentType</span><span class="pun">,</span><span class="pln"> newLength</span><span class="pun">);</span></code></li><li class="L6"><code><span class="pln">    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">arraycopy</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> newArray</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Math</span><span class="pun">.</span><span class="pln">min</span><span class="pun">(</span><span class="pln">length</span><span class="pun">,</span><span class="pln"> newLength</span><span class="pun">));</span></code></li><li class="L7"><code><span class="pln">    </span><span class="kwd">return</span><span class="pln"> newArray</span><span class="pun">;</span></code></li><li class="L8"><code><span class="pun">}</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="kwd">int</span><span class="pun">[]</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">1</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">4</span><span class="pun">};</span></code></li><li class="L1"><code><span class="pln">a </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pun">[])</span><span class="pln">copyOf</span><span class="pun">(</span><span class="pln">a</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">);</span></code></li></ol></pre><div class="md-section-divider"></div><h4 data-anchor-id="p7gx" id="invoking-arbitrary-methods">Invoking arbitrary methods</h4><p data-anchor-id="83fd">Java has no method pointer because the designer thought it is dangerous and Java interface is an alternative.  <br>
+Howeverm the reflection mechanism allows you to call arbitrary methods. Yet In a mush slower way. </p><ul data-anchor-id="lxgk">
+<li>obtain a <code>Method</code> object <br>
+<code>Method getMethod(String name, Class... parameterTypes)</code> <br>
+<code>Method m = x.class.getMethod("method_name",int.class);</code></li>
+<li>the method class has an <code>invoke</code> method <br>
+<code>Object invoke(Object obj, Object... args)</code> <br>
+The first parameter is the implicit parameter, and the rest are explicit. <br>
+For static methods, the first parameter "obj" should be null. </li>
+</ul><p data-anchor-id="h03w">Suggestion: use method class only when absolutely necessary. </p><div class="md-section-divider"></div><h3 data-anchor-id="c215" id="design-hints-for-inheritance">Design Hints for Inheritance</h3><ol data-anchor-id="5bx6">
+<li>place common operations and fields in the superclass.</li>
+<li>Do not use protected fields. </li>
+<li>Use inheritance to model the "is-a" relationship.</li>
+<li>Do not use inheritance unless all inherited methods make sense. </li>
+<li>Do not change the expected behavior when overriding a method. </li>
+<li>Use polymorphism, not type information. </li>
+<li>Do not overuse reflection. </li>
+</ol><div class="md-section-divider"></div><h2 data-anchor-id="u4lu" id="chapter-six-interfacces-and-inner-classes">Chapter Six: Interfacces and Inner Classes</h2><p data-anchor-id="ktdv">Two advanced techniques: </p><ul data-anchor-id="08c2">
+<li><em>interface</em>  describe what classes should do, regardless of how they should do it.</li>
+<li><em>inner classes</em> help design collections of cooperating classes. </li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="e420" id="interfaces">Interfaces</h3><p data-anchor-id="ixqb">A interface is a set of requirements for the classes that want to conform to the interface.  <br>
+For instance, if the sort method of Array class needs to be used to sort an array of objects, these objects must belong to classes that implement the Comparable interface which has a method called compareTo. </p><ul data-anchor-id="mf2r">
+<li>define an interface:  <br>
+<ol><li>An interface can have methods and constants. </li>
+<li>All methods in the interface are automatically <code>public</code>. </li>
+<li>All fields in the interface are automatically <code>public static final</code>.</li>
+<li>An interface never has instance fields and never implements any method. (These are the jobs of the classes that implement the interface)</li></ol></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="5qkc" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">interface</span><span class="pln"> </span><span class="typ">MyInterface</span><span class="pun">{</span></code></li><li class="L1"><code><span class="pln">    </span><span class="kwd">void</span><span class="pln"> f</span><span class="pun">();</span><span class="pln"> </span><span class="com"># not necessarily public</span></code></li><li class="L2"><code><span class="pln">    </span><span class="kwd">double</span><span class="pln"> pi </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3.14</span><span class="pun">;</span><span class="pln"> </span><span class="com"># auto public static final</span></code></li><li class="L3"><code><span class="pun">}</span></code></li></ol></pre><ul data-anchor-id="hpe0">
+<li>use an interface:  <br>
+<ol><li>a class implement the interface by keyword <code>implements</code>.</li>
+<li>supply definitions for all methods in the interface. </li></ol></li>
+</ul><blockquote data-anchor-id="is26" class="white-blockquote">
+  <p>in Java SE 5.0, an interface can be generic. <br>
+  <code>public interface MyInterface&lt;T&gt;</code> <br>
+  <code>class MyClass implements MyInterface&lt;MyType&gt;</code></p>
+</blockquote><div class="md-section-divider"></div><h4 data-anchor-id="30ia" id="properties-of-interfaces">Properties of Interfaces</h4><ul data-anchor-id="4qoq">
+<li>An interface is not a class. You cannot <code>new</code> an interface. </li>
+<li>But you can declare interface variables.  <br>
+<code>MyInterface x;</code> <br>
+An interface variable must refer to an object of a class that implements this interface. </li>
+<li><code>instanceof</code> can also be used to check whether an object implements an interface.  <br>
+<code>if(obj instanceof MyInterface)</code></li>
+<li>An interface can <code>extends</code> another interface. This will build an hierachy from generlization to specialization.  <br>
+<code>public interface YourInter extends MyInterface{</code></li>
+<li>A class can implement any number of interfaces (but only one superclass).  <br>
+<code>class MyClass implements MyInter, YourInter{</code></li>
+</ul><p data-anchor-id="klkn">The introduction of interfaces in Java aims to replace multiple inheritance. </p><div class="md-section-divider"></div><h3 data-anchor-id="pcyj" id="object-cloning">Object Cloning</h3><p data-anchor-id="xwd0">The <code>clone</code> method is declared <code>protected</code> in the <code>Object</code> class so you cannot simply call obj.clone().</p><p data-anchor-id="vre9">When you decide to clone an object, decide:  <br>
+1. The default clone method is good enough.  <br>
+2. The default clone method can be patched up by calling clone on the mutable subobjects to avoid shallow copy.  <br>
+3. cancel the cloning. </p><p data-anchor-id="hnqn">To choose either the first or the second choice, a class must:  <br>
+1. implement the <code>Cloneable</code> interface. <br>
+2. redefine the <code>clone</code> method with publc modifier.  <br>
+The <code>Cloneable</code> interface has nothing to do with the <code>clone</code> method which is inherited from <code>Object</code> class. It just serves as a tag to inform programmers. ("marker interface") But this is acutally a bad use. </p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="hbvi" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">Cloneable</span><span class="pun">{</span></code></li><li class="L1"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pln"> clone</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">throws</span><span class="pln"> </span><span class="typ">CloneNotSupportedException</span></code></li><li class="L2"><code><span class="pln">    </span><span class="pun">{</span></code></li><li class="L3"><code><span class="pln">        </span><span class="typ">MyClass</span><span class="pln"> myClone </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">MyClass</span><span class="pun">)</span><span class="kwd">super</span><span class="pun">.</span><span class="pln">clone</span><span class="pun">();</span></code></li><li class="L4"><code><span class="pln">        </span><span class="com">// deep copy if necessary</span></code></li><li class="L5"><code><span class="pln">        myClone</span><span class="pun">.</span><span class="pln">fields </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Type</span><span class="pun">)</span><span class="pln">fiels</span><span class="pun">.</span><span class="pln">clone</span><span class="pun">();</span></code></li><li class="L6"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> myClone</span><span class="pun">;</span></code></li><li class="L7"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L8"><code><span class="pun">}</span></code></li></ol></pre><p data-anchor-id="j0td">Specially, all array types have a <code>public</code> clone method instead of protected.</p><p data-anchor-id="ow4w">Cloning is less common than you think.  <br>
+"Object serialization" is an alternative for cloning objects. </p><div class="md-section-divider"></div><h3 data-anchor-id="3gst" id="callbacks">Callbacks</h3><p data-anchor-id="cua8">The callback pattern specifies the actions that should occur whenever a particular event happens. </p><p data-anchor-id="e5rh">For example, a timer wants to invoke an event after a ccertain time interval. The event is a class. The invoker is an interface with a method that takes the event as a parameter. And the listener implements this interface and supply the detail to invoke the event. Finally, the listener is passed to the timer as a parameter.  <br>
+Whenever you would use a function pointer in C++, you should use an interface in Java. </p><div class="md-section-divider"></div><h3 data-anchor-id="7wif" id="inner-class">Inner Class</h3><p data-anchor-id="7nsv">An inner class is a class that is defined inside another class. </p><ul data-anchor-id="3w41">
+<li>It can access data of the outer class, including the private ones. </li>
+<li>It can be hidden from other classes in the same package. </li>
+<li>Anonymous inner classes are handy to define callbacks without lots of codes.</li>
+</ul><blockquote data-anchor-id="6v9n" class="white-blockquote">
+  <p>In C++, nested classes provide two benefits: name control (call the inner class with the name of outer class) &amp; access control (classes in the private part are hidden from outside). </p>
+</blockquote><div class="md-section-divider"></div><h4 data-anchor-id="x7yv" id="access-object-state">Access Object State</h4><ul data-anchor-id="r3l1">
+<li>An inner class method can access both its own data fields and those of the outer object creating it. </li>
+<li>Every inner class has an invisible reference to the outer class object. </li>
+<li>Only inner classes can be private. Then only outer class methods would be able to construct inner class objects. </li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="x3yh" id="special-syntax-rules">Special syntax rules</h4><ul data-anchor-id="bxoe">
+<li>The outer class reference is denoted by <code>OuterClass.this</code>. <br>
+To access the fields from the inner class, use <code>OuterClass.this.field</code>.</li>
+<li>To create an inner object by an outer object <br>
+<code>InnerClass m = OuterClass.new InnerClass();</code></li>
+<li>refer to an inner class as <code>OuterClass.InnerClass</code>. </li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="jaco" id="usefulness-necessity-and-security">usefulness, necessity and security</h4><p data-anchor-id="3ypt">The inner class is a phenomenon of the compiler.  <br>
+The compiler translates the inner classes into nomal classes by concatenating the name of the outer class before them.  <br>
+JVM knows nothing about inner classes. </p><div class="md-section-divider"></div><h4 data-anchor-id="sc2v" id="local-inner-classes">Local Inner Classes</h4><p data-anchor-id="pcox">An inner class inside a method is called a local inner class.  <br>
+Local classes are never declared with an access modifier.  <br>
+Their scope is restricted to the block in which they are declared.  <br>
+One great advantage: it is totally hidden from the outside. No one except the method has any idea of the inner class. </p><div class="md-section-divider"></div><h4 data-anchor-id="98h4" id="accessing-final-variables">Accessing final variables</h4><p data-anchor-id="t0p2">Local inner classes can access local final variables.  <br>
+The inner class stores a copy of the local final varibles of the outer class when being constructed. So it is possible that the local final variable will be called by an object of the inner class even after the method ends. </p><div class="md-section-divider"></div><h4 data-anchor-id="drlc" id="anonymous-inner-classses">Anonymous Inner Classses</h4><p data-anchor-id="blb8">Without names.</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="eh6n" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">new</span><span class="pln"> </span><span class="typ">SuperType</span><span class="pun">(</span><span class="pln">construction parameters</span><span class="pun">){</span></code></li><li class="L1"><code><span class="pln">        </span><span class="com">//inner class methods and data</span></code></li><li class="L2"><code><span class="pln">    </span><span class="pun">}</span></code></li></ol></pre><p data-anchor-id="6ve2">Noted that <code>SuperType</code> can be an interface or a super class. </p><ul data-anchor-id="ejh0">
+<li>Anonymous inner classes have no constructors. </li>
+<li>Advantage: code-saving</li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="teb2" id="static-inner-class">Static Inner Class</h4><p data-anchor-id="85zx">A inner class that is <code>static</code> does not have a reference to the outer class.  <br>
+Only inner classes can be declared static.  <br>
+Use a static inner class whenever the inner class does not need to access an outer class object.  <br>
+Inner classes that are declared inside an interface are automatically static and public. </p><div class="md-section-divider"></div><h3 data-anchor-id="pqya" id="proxies">Proxies</h3><p data-anchor-id="9ag3">use proxy when creating new classes that implements a set of interfaces that I do not know which to choose at compile time</p><p data-anchor-id="aqtv">A <em>invocation handler</em> is an object of any class that implements the <code>InvocationHandler</code> interface which has a single method <code>invoke</code>. </p><p data-anchor-id="d4km">To create a proxy object, use the <code>newProxyInstance</code> method of the <code>Proxy</code> class.  <br>
+We define different handlers for proxies with different purposes. </p><ul data-anchor-id="g8d5">
+<li>All proxy classes extend the class <code>Proxy</code>.</li>
+<li>A proxy class has only one instance field - the invocation handler, which is defined in the <code>Proxy</code> superclass.</li>
+<li>All proxy classes override the toString, equals nad hashCode methods of the Object class. </li>
+<li>The names of proxy classes are not defined. </li>
+<li>A proxy class is always public and final. </li>
+</ul><p data-anchor-id="hcll">Proxy is an advanced technique for tool builders, not for application programmers. </p></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Regular Expression</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="apry" id="regular-expression">Regular Expression</h1><p data-anchor-id="4k27"><code>programming_language</code></p><hr><div class="md-section-divider"></div><h2 data-anchor-id="1pxw" id="basic-token">basic token</h2><ul data-anchor-id="4zh5">
+<li>match any single character <br>
+<code>.</code></li>
+<li>match a former character <br>
+<ul><li><code>{n}</code> exactly n times <br>
+<code>{n,}</code> at least n times <br>
+<code>{n,m}</code> at least n times, at most m times</li>
+<li><code>?</code>  0 or once  = {0,1} <br>
+<code>*</code>  any times  = {0,} <br>
+<code>+</code>  once or more = {1,}</li></ul></li>
+<li>use <code>\</code> to convert <br>
+For instance, <code>\*</code> matches a <code>*</code>. <br>
+<code>(</code>, <code>-</code> need to be converted to match.</li>
+<li><p>use <code>?</code> after <code>+</code> or <code>*</code> to prevent greedness <br>
+<code>.*</code> matches as much as possible <br>
+<code>.*?</code> prevents this</p></li>
+<li><p>use square bracket <code>[]</code> to sepcify some characters <br>
+Eg. <code>[Aa]pple</code> matches both "Apple" and "apple".</p></li>
+<li><p>use <code>-</code> to show a range of alphabets or numbers <br>
+<code>[0-9]</code> specifies any single number. <br>
+<code>[a-zA-Z]</code> specifies any alphabet.</p></li>
+<li><p>use <code>^</code> before a group of characters to match any character except them <br>
+Eg. <code>appl[^e]</code> matches "applw" and "appl" except "apple".</p></li>
+<li><p>Another use of <code>\</code>:  <br>
+Transform a single character into a group</p>
+
+<ul><li><code>\s</code> matches any space, including SPACE, TAB, NEXTLINE.</li>
+<li><code>\t</code> matches any non-space.</li>
+<li><code>\b</code> matches the boundary of a word. <br>
+Eg. <code>er\b</code> matches "number" not "verb". </li>
+<li><code>\B</code> doees <strong>not</strong> match the boundary of a word <br>
+Exactly the reverse of the example above. </li>
+<li><code>\d</code> matches a digit = <code>[0-9]</code></li>
+<li><code>\D</code> matches a non-digit = <code>[^0-9]</code></li></ul></li>
+<li><p>Grouping <br>
+To make a sub-pattern of a pattern, grouping begins with <code>?:</code>. <br>
+Eg.  <code>(?:ab){1,2}</code> matches both "abab" and "ab". </p></li>
+<li><p>tube character</p>
+
+<ul><li><code>|</code> matches left <strong>OR</strong> right <br>
+Eg. <code>a(?:b|c)d</code> matches both "abd" and "acd".</li></ul></li>
+<li><p>Capturing group <br>
+extract what you group using <code>()</code> <br>
+Eg. match "aab123dd" with <code>ab(\d{3})d</code> to extract "123". </p></li>
+<li><p>The beginning of a line <code>^</code>. <br>
+The ending of a line <code>$</code>.</p></li>
+<li><p>Change some default settings</p>
+
+<ul><li>Add <code>g</code>  to do a global match <code>/regular expression/g</code>.</li>
+<li>ignore case <code>/regular expression/i</code></li></ul></li>
+</ul></div>
+</body>
+</html>

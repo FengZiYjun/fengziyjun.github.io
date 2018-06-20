@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Object-oriented design patterns</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="jhpd" id="object-oriented-design-patterns">Object-oriented design patterns</h1><p data-anchor-id="d85c"><code>design_pattern</code></p><hr><div class="md-section-divider"></div><h2 data-anchor-id="8mqp" id="background">Background</h2><p data-anchor-id="nlle">GoF: Gang of Four, four persons that bring the thought of patterns into software engineering.  <br>
+<em>Design patterns: elements of reusable object-oriented software</em>: a book that marks the beginning of design patterns.  <br>
+GRASP: general responsbility assignment software pattern.  <br>
+Rule of Three: A good solution should be applied successfully in at least three different fields. </p><div class="md-section-divider"></div><h2 data-anchor-id="y8ut" id="rules-of-object-orientation">Rules of object orientation</h2><p data-anchor-id="ebz7">Three policies: </p><ul data-anchor-id="gh5y">
+<li>encapsulatin </li>
+<li>inhetitance</li>
+<li>polynorphism</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="ztoj" id="basic-principles-solid">Basic Principles: S.O.L.I.D.</h3><ul data-anchor-id="qpt8">
+<li>Single resposibility principle <br>
+A responsibility means a reason for which a class may change.  <br>
+A class or module should have only one reason for which it can be change.  <br>
+This principle means to encapsulate different responsibilities into different classes. <br>
+So it involves responsibility division and granulation.</li>
+<li>Open closed principle <br>
+open to expansion, closed to modification. <br>
+A good-design program can be expanded without modification.  <br>
+The key is "Abstraction". </li>
+<li>Liskov substitution principle  <br>
+A sub-class can substitute its parent class without any change in the clinet bahavior that calls the parent class.</li>
+<li>Interface segregation principle <br>
+small interface <br>
+high inner gregation. <br>
+specifically designed. <br>
+limited, small granulation.</li>
+<li>Dependency inversion principle <br>
+High modules should not rely on low modules. Both should rely on <em>Abstraction</em>. <br>
+Abstraction should not rely on details. Instead, details should rely on abstraction.  <br>
+Interface-oriented programming:  <br>
+<ol><li>low modules should have abtract class or interfaces. </li>
+<li>the declaration of variables should be abstract classes or interfaces. </li>
+<li>inheritance follows the Liskov principle.</li></ol></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="t96v" id="factory-method-pattern">Factory Method Pattern</h3><div class="md-section-divider"></div><h4 data-anchor-id="v7t2" id="advantages">advantages</h4><p data-anchor-id="u7kq"><strong>Clinets no necessarily know the exact product names.</strong> <br>
+Which product will be created is decided by the factory itself.  <br>
+No need to modify the interfaces of abstract factory and abstract products. </p><div class="md-section-divider"></div><h4 data-anchor-id="9fke" id="drawback">drawback</h4><p data-anchor-id="fqqp">A new factory as well as a new product has to be added which brings more complexity.  <br>
+The use of abstraction leads to difficulty of understanding.  <br>
+There can be only one abstract product. </p><div class="md-section-divider"></div><h3 data-anchor-id="nale" id="abstract-factory-pattern">Abstract Factory Pattern</h3><ul data-anchor-id="ik07">
+<li>product hierarchy <br>
+the inhetitance stracture of the products, such as an abstract TV and a concrete-brand TV.</li>
+<li>product group <br>
+a group of products from different product hierarchies that prduced by the same factory <br>
+such as TV, refrigerator and microwaver that have the same brand</li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="106f" id="when-to-use">when to use</h4><p data-anchor-id="yhrs">The products have more than one product groups and each time only one of them will be used.  <br>
+Products from the same group are designed to be used together. </p><div class="md-section-divider"></div><h3 data-anchor-id="gf74" id="builder-pattern">Builder Pattern</h3><div class="md-section-divider"></div><h4 data-anchor-id="2dde" id="advantages-1">advantages</h4><ul data-anchor-id="nr2e">
+<li>When constructing a complex object, <strong>the order of its components is stable but the they will encounter complicated changes.</strong> </li>
+<li>The algorithm used to create the object is independent from its components. </li>
+<li>the difference between builder pattern and factory pattern: the latter focuses on the construction of a single product while the former one emphesizes assembling various components accroding to the needs. </li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="k2on" id="singleton-pattern">Singleton Pattern</h3><p data-anchor-id="gziu">There is <strong>only one instance of the class</strong>.  <br>
+Even if more than one object of this class is created, they are all actually the same instance.</p><div class="md-section-divider"></div><h3 data-anchor-id="3o95" id="decorator-pattern">Decorator Pattern</h3><p data-anchor-id="3yb0">used to expand the functions of a class or add responsibilities to the class.  <br>
+when it is unrealistic to use inheritage.</p><div class="md-section-divider"></div><h3 data-anchor-id="0vhr" id="proxy-pattern">Proxy Pattern</h3><p data-anchor-id="feom">When the client does not want to directly access an object, a proxy is used to help the client to do things. </p><div class="md-section-divider"></div><h3 data-anchor-id="m2ha" id="observer-pattern">Observer Pattern</h3><p data-anchor-id="8s35">This pattern is a mechenism of dependency relationship between an object and lots of observers. <strong>When the object changes, all observers will get noticed.</strong> And there is no connection among different observers. </p><div class="md-section-divider"></div><h3 data-anchor-id="1yap" id="strategy-pattern">Strategy Pattern</h3><p data-anchor-id="jeig">define a series of algorithms and encapsulate all of them to make them replacable to each other <br>
+separate the actual algorithm from business logic</p><p data-anchor-id="6thu">Additional Resources: <br>
+<a href="http://www.cnblogs.com/grkin/archive/2013/03/17/2964964.html" target="_blank">http://www.cnblogs.com/grkin/archive/2013/03/17/2964964.html</a></p></div>
+</body>
+</html>
